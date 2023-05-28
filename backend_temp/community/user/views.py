@@ -12,7 +12,7 @@ def login(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             request.session['user'] = form.user_id
-            return redirect('/')
+            return redirect('templates/main.html')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
