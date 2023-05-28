@@ -13,7 +13,7 @@
     <form method="post" action="">
         <div class="my-33">
             <div class="search_title">회원가입</div>
-            {{ error }}
+            <span style="color: red; font-size: 15px;">{{ error }}</span>
             {% csrf_token %}
             <div class="mb-3">
                 <div for="username" class="search_subtitle">아이디</div>

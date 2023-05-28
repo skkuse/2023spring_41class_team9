@@ -51,6 +51,8 @@ def register(request):
             res_data['error'] = '모든 값을 입력하세요.'
         elif password != re_password:
             res_data['error'] = '비밀번호가 다릅니다.'
+        elif User.objects.filter(username=username):
+            res_data['error'] = '중복된 아이디가 존재합니다.'
         else:
             user = User(username = username, password = make_password(password))
             user.save()

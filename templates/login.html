@@ -14,7 +14,7 @@
         {% csrf_token %}
         <div class="mainpage_content">
             <div class="logo"></div>
-            {{ error }}
+            <span style="color: red; font-size: 15px;">{{ error }}</span>
             <input type="text" class = "input_items" name="username" placeholder="아이디" id="username">
             <input type="password" class = "input_items" name="password" placeholder="비밀번호"  id="password">
             <button type="submit" class="submit_btn">로그인</button>
