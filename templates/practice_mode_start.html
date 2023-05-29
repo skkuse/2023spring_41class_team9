@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/basic.css">
-    <title>Practice Mode</title>
+    <title>Practice</title>
     <link rel="import" href="testContents.html">
 </head>
 
@@ -26,12 +26,19 @@
 
 
     <div class="problem_area">
-        <div class="problem_title"> 4. 홀짝에 따라 다른값 반환하기</div>
+        <div class="problem_title"> {{problem_title}}</div>
         <div class="provlem_content">{{problem_content}}
           
-            양의 정수 n이 매개변수로 주어질 때, n이 홀수라면 n 이하의 홀수인 모든 양의 정수의 합을 return 하고 n이 짝수라면 n 이하의 짝수인 모든 양의 정수의 제곱의 합을 return 하는 solution 함수를 작성하라.
-            <div class="io_example">{{io_example}}입출력 예시</div></div>
-        
+        </div>
+        <!--<div class="io_example">{{io_example1}}{{io_example2}}{{io_example3}}{{io_ex_answer1}}{{io_ex_answer2}}{{io_ex_answer3}}</div>-->
+        <div class="io_example">
+            {% if io_example1 %}{{ io_example1 }}{% endif %}
+            {% if io_example2 %}{{ io_example2 }}{% endif %}
+            {% if io_example3 %}{{ io_example3 }}{% endif %}
+            {% if io_ex_answer1 %}{{ io_ex_answer1 }}{% endif %}
+            {% if io_ex_answer2 %}{{ io_ex_answer2 }}{% endif %}
+            {% if io_ex_answer3 %}{{ io_ex_answer3 }}{% endif %}
+          </div>
     </div>
 
     <div class="midline"></div>
@@ -41,12 +48,12 @@
             <div class="prob_number">문제 N</div>
         <div class="hint_n_time">
             <div class="hint_area">
-                <div class ="info_word">힌트</div>
-                <button class="hint_icon" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint1"></button>
-                <button class="hint_icon" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint2"></button>
-                <button class="hint_icon" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint3"></button>
-                <button class="hint_icon" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint4"></button>
-                <button class="hint_icon skeleton" onclick="alert('스켈레톤 힌트를 쓰시겠습니까?')" id= "hint5"></button>
+                <div class ="hint_word">힌트</div>
+                <button class="hint" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint1"></button>
+                <button class="hint" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint2"></button>
+                <button class="hint" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint3"></button>
+                <button class="hint" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint4"></button>
+                <button class="hint skeleton" onclick="alert('스켈레톤 힌트를 쓰시겠습니까?')" id= "hint5"></button>
             </div>
             <div class="time_area">
                 <div class ="time_icon"></div>
@@ -67,7 +74,7 @@
         </div>
 
     </div>
-    
+    <!--
     <div class=footer>
         
         <button class="home_icon"></button>
@@ -75,7 +82,7 @@
         <button class="question_icon"></button>
         <div class ="question">도움말</div>  
     </div> 
-            
+       -->     
 </body>
 
 </html>
