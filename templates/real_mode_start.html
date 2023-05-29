@@ -21,21 +21,20 @@
     </div>
 
     <div class="problem_area">
-      <div class="problem_title">Q. 연산자 끼워넣기</div>
-      <div class="provlem_content">
-        {{problem_content}} 문제 설명<br />
-        N개의 수로 이루어진 수열 A1, A2, ..., AN이 주어진다. 또, 수와 수 사이에
-        끼워넣을 수 있는 N-1개의 연산자가 주어진다. 연산자는 덧셈(+), 뺄셈(-),
-        곱셈(×), 나눗셈(÷)으로만 이루어져 있다. 우리는 수와 수 사이에 연산자를
-        하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면
-        안 된다. 예를 들어, 6개의 수로 이루어진 수열이 1,2,3,4,5,6 일때 사용자가
-        연산해야 하는 수식은 다음과 같고 그 결과 도출해야하는 값은 다음과 같다.
-        이때, 주어진 수의 순서를 바꾸면 안 된다. 예를 들어, 6개의 수로 이루어진
-        수열이 1,2,3,4,5,6 일때 사용자가 연산해야 하는 수식은 다음과 같고 그
-        결과 도출해야하는 값은 다음과 같다.
-        <div class="io_example">{{io_example}}입출력 예시</div>
+      <div class="problem_title"> {{problem_title}}</div>
+      <div class="provlem_content">{{problem_content}}
+        
       </div>
-    </div>
+      <!--<div class="io_example">{{io_example1}}{{io_example2}}{{io_example3}}{{io_ex_answer1}}{{io_ex_answer2}}{{io_ex_answer3}}</div>-->
+      <div class="io_example">
+          {% if io_example1 %}{{ io_example1 }}{% endif %}
+          {% if io_example2 %}{{ io_example2 }}{% endif %}
+          {% if io_example3 %}{{ io_example3 }}{% endif %}
+          {% if io_ex_answer1 %}{{ io_ex_answer1 }}{% endif %}
+          {% if io_ex_answer2 %}{{ io_ex_answer2 }}{% endif %}
+          {% if io_ex_answer3 %}{{ io_ex_answer3 }}{% endif %}
+        </div>
+  </div>
 
     <div class="midline"></div>
 
