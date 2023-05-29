@@ -28,7 +28,7 @@ def login(request):
                     res_data['error'] = '비밀번호를 잘못 입력하셨습니다.'
             except User.DoesNotExist:
                 res_data['error'] = '아이디가 없습니다.' 
-
+        
         return render(request, 'login.html', res_data)
     
 def logout(request):
