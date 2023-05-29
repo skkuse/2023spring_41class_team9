@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/basic.css" />
+    <title>Real Mode</title>
+    <link rel="import" href="testContents.html" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo_header"></div>
+      <div class="user_header">
+        <div class="user_icon"></div>
+        <div class="user_name">{{user_name}}</div>
+        <div class="user_score_icon"></div>
+        <div class="user_name">{{user_score}}</div>
+      </div>
+    </div>
+
+    <div class="problem_area">
+      <div class="problem_title">Q. 연산자 끼워넣기</div>
+      <div class="provlem_content">
+        {{problem_content}} 문제 설명<br />
+        N개의 수로 이루어진 수열 A1, A2, ..., AN이 주어진다. 또, 수와 수 사이에
+        끼워넣을 수 있는 N-1개의 연산자가 주어진다. 연산자는 덧셈(+), 뺄셈(-),
+        곱셈(×), 나눗셈(÷)으로만 이루어져 있다. 우리는 수와 수 사이에 연산자를
+        하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면
+        안 된다. 예를 들어, 6개의 수로 이루어진 수열이 1,2,3,4,5,6 일때 사용자가
+        연산해야 하는 수식은 다음과 같고 그 결과 도출해야하는 값은 다음과 같다.
+        이때, 주어진 수의 순서를 바꾸면 안 된다. 예를 들어, 6개의 수로 이루어진
+        수열이 1,2,3,4,5,6 일때 사용자가 연산해야 하는 수식은 다음과 같고 그
+        결과 도출해야하는 값은 다음과 같다.
+        <div class="io_example">{{io_example}}입출력 예시</div>
+      </div>
+    </div>
+
+    <div class="midline"></div>
+
+    <div class="answer_area">
+      <div class="answer_area_top">
+        <div class="real_mode_sqr">실전모드</div>
+        <div class="real_mode_score">
+          <div class="hint_area">
+            <div class="info_word">나의 점수</div>
+            
+            <div class="star_icon"></div>
+        
+            <div class="info_word" id="realmode_score">77점</div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="answer_area_middle">
+        <div class="progress_area">
+            <div id="wholeProgress">
+              <div id="myBar"></div>
+            </div>
+            <div class="time_area">
+            <div class="time_word">남은시간</div>
+            <div class="time_icon"></div>
+            <div class="time">10:00</div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="put_answer">
+        <textarea
+          type="text"
+          class="user_answer"
+          name="user_answer"
+          placeholder="정답을 입력하세요"
+          id="user_answer"
+        ></textarea>
+
+        <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')">
+          제출
+        </button>
+        <div class="submit_icon"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button class="home_icon"></button>
+      <div class="to_home">메인으로</div>
+      <button class="question_icon"></button>
+      <div class="question">도움말</div>
+    </div>
+  </body>
+</html>
