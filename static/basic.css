@@ -126,7 +126,8 @@ body {
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
-    position: absolute;
+    position: fixed;
+    bottom : 0;
     margin-left: 2.5%;
 }
 
@@ -527,4 +528,78 @@ body {
 #realmode_score{
     color:#fc4848;
     padding-left:1rem;
+}
+
+
+.review_area {
+    width: 100%;
+    /* height: 70vh; */
+    display: flex;
+    flex-direction: column;
+    /* margin-top:10rem;  */
+    margin: 0 auto;
+    padding: 4rem;
+}
+
+.review_top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.review {
+    width: 9.607rem;
+  /* height: 3.438rem; */
+  background-color: #efefef;
+}
+
+.search_icon {
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-image: url('/static/img/search.png');
+    background-size: contain;
+    /* margin-right: 0.3rem; */
+
+}
+
+.chat_icon {
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-image: url('/static/img/chat.png');
+    background-size: contain;
+    /* margin-right: 0.3rem; */
+
+}
+
+.chat_area{
+    display:flex;
+    flex-direction: row;
+  /* height: 4.063rem; */
+  flex-grow: 0;
+  padding: 1rem;
+  border-radius: 34px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 1px 12px 0 rgba(0, 0, 0, 0.04);
+  border: solid 2px #000;
+  /* background-color: #fff; */
+}
+
+.user_question{
+    
+    width: 28.767rem;
+    height: 1.875rem;
+    flex-grow: 0;
+    margin: 0.073rem 1.233rem 0.466rem 1.122rem;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
 }
