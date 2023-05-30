@@ -2,8 +2,6 @@ from django.shortcuts import render
 from .models import Problems
 import random
 
-# Create your views here.
-
 def practice(request):
     return render(request, 'practice.html')
 

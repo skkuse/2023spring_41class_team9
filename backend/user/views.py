@@ -11,7 +11,9 @@ def home(request):
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
         username = user.username
-    return render(request, 'main.html', {'username': username})
+        return render(request, 'main.html', {'username': username})
+    else:
+        return redirect('/user/login/')
     #return render(request, 'main.html')
 
 def login(request):
