@@ -65,6 +65,8 @@
 
 
       </div>
+      <form method="POST">
+        {% csrf_token %}
       <div class="put_answer">
         <textarea
           type="text"
@@ -79,6 +81,7 @@
         </button>
         <div class="submit_icon"></div>
       </div>
+    </form>
     </div>
 
     <div class="footer">
