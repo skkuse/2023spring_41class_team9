@@ -5,7 +5,13 @@ from .models import User
 from .forms import LoginForm
 
 def home(request):
-    return render(request, 'main.html')
+    username = None
+    if 'user' in request.session:
+        user_id = request.session['user']
+        user = User.objects.get(id=user_id)
+        username = user.username
+    return render(request, 'main.html', {'username': username})
+    #return render(request, 'main.html')
 
 def login(request):
     if request.method == 'GET':
