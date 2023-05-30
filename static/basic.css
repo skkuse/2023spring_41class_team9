@@ -11,7 +11,8 @@
 html {
     min-height: 100vh;
     width: 100vw;
-    /* font-size: 62.5%; */
+
+    font-size: 62.5%;
 
 }
 
@@ -19,7 +20,7 @@ body {
     /* min-height: 100vh; */
     /* width: 100%;
     height: 100%; */
-    height:100vh;
+    /* height:100vh; */
     width: 100vw;
     flex-grow: 0;
     justify-content: flex-start;
@@ -150,35 +151,6 @@ body {
     font-weight: 600;
 }
 
-.sub_word{
-    font-family: Inter;
-    font-size: 1.5rem;
-    text-align: left;
-    color: #263238;
-    padding: 1rem;
-    font-weight: 600;
-    /* width:100%; */
-}
-
-.code{
-    width:30%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.runtime_code{
-    width:30%;
-    height: auto;
-}
-.AI_code{
-    width:30%;
-    height: auto;
-}
-.review_prob{
-
-}
-
 .provlem_content {
     font-family: Inter;
     font-size: 1.5rem;
@@ -190,11 +162,6 @@ body {
     text-align: left;
     color: #263238;
     margin-top:1rem;
-}
-.reivew_cont{
-    width:90%;
-    margin: auto;
-    height: 7rem;
 }
 
 .io_example {
@@ -347,8 +314,6 @@ body {
     font-style: normal;
     /* line-height: 1.04; */
 }
-
-
 
 .hint_n_time {
     width: 100%;
@@ -582,25 +547,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-.review_middle{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border:#000 2px;
-    border: solid 2px #000;
-    flex-direction: column;
-    align-items: flex-start;
-    
-}
 
-.review_bottom{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    justify-content: space-between;
-}
 
 
 .review {
@@ -655,23 +602,4 @@ body {
     line-height: normal;
     letter-spacing: normal;
     color: #000000;
-}
-
-.code_onethird{
-    width: 100%;
-    height: 100%;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 1px 12px 0 rgba(0, 0, 0, 0.04);
-    background-color: #565656;
-    margin: 0 auto;
-    color: white;
-    display: block;
-    text-align: top;
-    font-family: Inter;
-    font-size: 1.7rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    overflow: scroll;
 }
