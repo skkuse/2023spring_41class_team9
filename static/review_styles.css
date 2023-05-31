@@ -582,6 +582,14 @@
 	font-size:24px;
 	letter-spacing:0;
 }
+
+.bugjava_i32_2548_17_415 {
+	color:rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
+	font-family:Nunito;
+	text-align:left;
+	font-size:24px;
+	letter-spacing:0;
+}
 .id_icon_i32_2548_75_2063 { 
 	width:35px;
 	height:34px;
@@ -589,6 +597,17 @@
 	left:-1px;
 	top:-1px;
 	background-image:url(images/id_icon.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+.id_icon_i32_2548_82_269 {
+	width:27px;
+	height:28px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background-image:url(images/score_icon.png);
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -603,8 +622,8 @@
 	width:62.780487060546875px;
 	height:21px;
 	position:absolute;
-	left:42px;
-	top:3px;
+	left:40px;
+	top:0px;
 }
 .263_i32_2548_17_415 { 
 	color:rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);

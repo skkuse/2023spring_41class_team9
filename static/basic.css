@@ -57,6 +57,7 @@ body {
     background-size: contain;
     float: left;
     margin-left: 5rem;
+    cursor:pointer;
 
 }
 
