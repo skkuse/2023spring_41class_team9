@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Problems
 from user.models import User
@@ -14,6 +14,8 @@ def practice(request):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
     problems = Problems.objects.all()[:10]
     context = {'user':user, 'problems':problems}
     return render(request, 'practice.html', context)
@@ -24,6 +26,8 @@ def real(request):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
 
     return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
 
@@ -34,6 +38,8 @@ def practice_start(request, id, hint_id=1):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
 
 
     if request.method == 'POST':      
@@ -128,6 +134,8 @@ def real_start(request, id):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
 
 
     if request.method == 'POST':
@@ -175,6 +183,8 @@ def review(request):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
     return render(request, 'review.html',{"user":user})
 
 
