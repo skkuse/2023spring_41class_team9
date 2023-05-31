@@ -48,12 +48,25 @@
             <div class="prob_number">문제 N</div>
         <div class="hint_n_time">
             <div class="hint_area">
-                <div class ="hint_word">힌트</div>
-                <button class="hint" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint1"></button>
-                <button class="hint" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint2"></button>
-                <button class="hint" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint3"></button>
-                <button class="hint" onclick="alert('이 힌트를 쓰시겠습니까?')" id= "hint4"></button>
-                <button class="hint skeleton" onclick="alert('스켈레톤 힌트를 쓰시겠습니까?')" id= "hint5"></button>
+                <button class="hint" onclick="showHint('{{hint}}')" id="hint1">힌트 보기</button>
+                <script>
+                function showHint(hintMessage) {
+                // 팝업 창 생성
+                var hint = hintMessage; // 힌트 텍스트
+                var hint1_msg = "문제 정보에 관한 힌트를 쓰시겠습니까?"; // 힌트 텍스트
+                var confirmMessage = confirm(hint1_msg); // 확인 버튼 클릭 여부 확인
+                
+                if (confirmMessage) {
+                    // 확인 버튼을 클릭한 경우
+                    alert(hintMessage);
+                    // 추가로 필요한 작업 수행
+                } 
+                }
+                </script>
+
+                <button class="hint" onclick="alert('다음 단계와 관련된 힌트를 쓰시겠습니까?')" id= "hint2"></button>
+                <button class="hint" onclick="alert('코드 수정과 관련된 힌트를 쓰시겠습니까?')" id= "hint3"></button>
+                <button class="hint" onclick="alert('skeleton code에 관한 힌트를 쓰시겠습니까?')" id= "hint4"></button>
             </div>
             <div class="time_area">
                 <div class ="time_icon"></div>
