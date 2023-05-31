@@ -337,7 +337,7 @@ padding : 0 0 0 1rem;
 
 .user_answer {
     width: 98%;
-    height: 200%;
+    height: 60vh;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 1px 12px 0 rgba(0, 0, 0, 0.04);
