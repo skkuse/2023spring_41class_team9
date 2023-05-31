@@ -7,6 +7,9 @@ class User(models.Model):
                                 verbose_name='비밀번호')
     registered_dttm = models.DateTimeField(auto_now_add=True,
                                            verbose_name='등록시간')
+
+    score = models.IntegerField(default=0)
+    stage = models.IntegerField(default=1)
     
     def __str__(self):
         return self.username
