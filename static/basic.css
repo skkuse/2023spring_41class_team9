@@ -589,6 +589,7 @@ padding : 0 0 0 1rem;
     align-items: center;
     justify-content: center;
     margin-bottom:2rem;
+    margin-left: -2rem;
 }
 .review_middle{
     width: 100%;
@@ -631,6 +632,7 @@ padding : 0 0 0 1rem;
 }
 
 .chat_icon {
+    margin-top: 0.5rem;
     width: 2rem;
     height: 2rem;
     background-repeat: no-repeat;
@@ -643,6 +645,7 @@ padding : 0 0 0 1rem;
 .chat_area{
     display:flex;
     flex-direction: row;
+    align-items: center;
   /* height: 4.063rem; */
   flex-grow: 0;
   margin-left:2rem;
@@ -652,6 +655,7 @@ padding : 0 0 0 1rem;
   border: solid 2px #000;
   /* background-color: #fff; */
 }
+
 
 #user_question{
     
@@ -664,9 +668,8 @@ padding : 0 0 0 1rem;
     font-weight: 300;
     color: #000000;
     /* border:none; */
-
-    width: 32.75rem;
-    height: 3.938rem;
+    /* width: 32.75rem;
+    height: 3.938rem; */
     margin: 0.4rem auto;
     padding: 0 2.313rem 0 1.313rem;
     border: solid 2px #c4c4c4;
