@@ -102,7 +102,7 @@ def practice_start(request, id, hint_id=1):
                 
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'codecraft'
+            'Authorization': 'Bearer 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'
         }
 
         hint = []
