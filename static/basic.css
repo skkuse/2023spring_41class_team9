@@ -132,7 +132,7 @@ body {
 }
 
 .problem_area {
-    width: 35rem;
+    width: 55rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -262,7 +262,7 @@ body {
     color: #000;
     margin-top: -5rem;
     margin-left: 83%;
-    padding-left: 2rem;
+    padding-left: 3.5rem;
     border: none;
     position: absolute;
     display: inline;
@@ -289,7 +289,7 @@ body {
 .put_answer {
     /* padding : 1.5rem; */
     width: 100%;
-    height: 560%;
+    height: 30vh;
     display: flex; 
     justify-content: space-between;
     display: inline-block;
@@ -602,4 +602,9 @@ body {
     line-height: normal;
     letter-spacing: normal;
     color: #000000;
+}
+.provlem_input, .provlem_output, .io_example{
+    font-size:1.5rem;
+    padding:1rem;
+
 }
