@@ -6,12 +6,12 @@ from .forms import LoginForm
 import re
 
 def home(request):
-    username = None
+    user = None
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-        username = user.username
-        return render(request, 'main.html', {'username': username})
+        # username = user.username
+        return render(request, 'main.html', {'user': user})
     else:
         return redirect('/user/login/')
     #return render(request, 'main.html')

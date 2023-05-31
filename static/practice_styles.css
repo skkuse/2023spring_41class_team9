@@ -21,13 +21,41 @@
 	left:9px;
 	top:296px;
 }
+
+.bg_locked{
+	background-image:url(images/lock_gray.png)!important;
+}
+.bg-opened{
+	background-image:url(images/story_1.png)!important;
+
+}
+.bg-crown-0{
+	background-image:url(images/crown0_2.png)!important;
+
+}
+.bg-crown-1{
+	background-image:url(images/crown1_1.png)!important;
+
+}
+.bg-crown-2{
+	background-image:url(images/crown2_1.png)!important;
+
+}
+.bg-crown-3{
+	background-image:url(images/crown3.png)!important;
+
+}
+.bg-start{
+	background-image:url(images/start_1.png)!important;
+
+}
 .lock_gray_1_79_8558 { 
 	width:70px;
 	height:65px;
 	position:absolute;
 	left:0px;
 	top:0px;
-	background-image:url(images/lock_gray.png);
+	/*background-image:url(images/lock_gray.png);*/
 	background-repeat:no-repeat;
 	background-size:cover;
 }
