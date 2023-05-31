@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/static/basic.css" />
-    <title>Real Mode</title>
+    <title>Review Mode</title>
     <link rel="import" href="testContents.html" />
   </head>
 
@@ -23,37 +23,131 @@
     <div class="review_area">
     <div class="review_top">
         <div class="prob_number review" >오답노트</div>
-        <form method="post" action="">
+       
         <div class="chat_area">
             <div class="search_icon"></div>
             <input type="text" class="user_question" name="user_question"
             placeholder="인공지능에게 물어보기!"
-            id="user_question" autofocus >
+            id="user_question" >
             <div class="chat_icon"></div>
         </div>
-    </form>
+      
     </div>
     <div class="review_middle">
-        <div class="problem_title"></div>
-        <div class="problem_content">
-
+        <div class="problem_title review_prob">{{problem_title}}</div>
+        <div class="provlem_content review_cont">
+          {{problem_content}}
         </div>
     </div>
-    <div class="review_bottom"></div>
-     <div class="my_code">
-        <div class="sub_word"></div>
-        <textarea class="code_1/3"></div>
+
+    <div class="review_bottom">
+     <div class="code">
+        <div class="sub_word">내가 제출한 코드</div>
+        <div class="code_onethird" id="my_code">justify-content: flex-start;
+          /* padding: 15.875rem 0 0 29.875rem; */
+          background-color: #fff;
+          /* margin-top: 8%; */
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin: 0 auto;
+      }
+      
+      .header {
+          width: 100%;
+          position: absolute;
+      
+          top: 4.5625rem;
+          display: flex;
+          /* height : 100%; */
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          position: absolute;
+      }
+      
+      
+      .logo_header {
+          width: inherit;
+          height: 2.5rem;
+          /* margin: 0 auto; */
+          /* object-fit: contain; */
+          background-repeat: no-repeat;
+          background-image: url('/static/img/CodeCraft.png');
+          background-size: contain;
+          float: left;
+          margin-left: 5rem;
+      
+      }
+      
+      .user_header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          position: relative;
+          margin-right: 5rem;
+          float: right;
+          margin-bottom: 2rem;
+      
+      }
+      
+      .user_info {
+          width: auto;
+          display: flex;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          position: relative;
+      }
+      
+      .user_acc {
+          display: flex;
+          flex-direction: row;
+      }
+      
+      .user_icon {
+          width: 2rem;
+          height: 2rem;
+          background-repeat: no-repeat;
+          background-image: url('/static/img/user_icon.png');
+          background-size: contain;
+          margin-right: 0.3rem;
+      
+      }
+      
+      .user_name {
+          margin-right: 0.8rem;
+          flex-grow: 0;
+          font-family: Inter;
+          font-size: 1.5rem;
+          font-weight: 500;
+          text-align: left;
+          color: #5c5c5c;
+      }
+      
+      .user_score_icon {
+          width: 2rem;
+          height: 2rem;
+          background-repeat: no-repeat;
+          background-image: url('/static/img/score.png');
+          background-size: contain;
+          /* margin-right:0.3rem; */
+      }
+      </div>
      </div>
-     <div class="runtime_code">
-        <div class="sub_word"></div>
-        <textarea class="code_1/3"></div>
+     <div class="code">
+        <div class="sub_word">런타임 최단시간 코드</div>
+        <div class="code_onethird" id="runtime_code">     </div>
      </div>
      
-     <div class="AI_code">
-        <div class="sub_word"></div>
-        <textarea class="code_1/3"></div>
+     <div class="code">
+        <div class="sub_word">인공지능 코드</div>
+        <div class="code_onethird" id="AI_code"></div>
      </div>
     </div>
+  
     
 
 
