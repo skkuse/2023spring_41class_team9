@@ -41,7 +41,6 @@ def practice_start(request, id, hint_id=1):
     else:
         return redirect('/user/login/')
 
-
     if request.method == 'POST':      
         user_answer = request.POST.get('user_answer', '')  # 폼 요소의 name 속성 값을 사용하여 데이터 불러오기
         with open('a.py', 'w') as file:
@@ -66,21 +65,22 @@ def practice_start(request, id, hint_id=1):
                             correct3 = subprocess.run(['python', path], input=test_3, capture_output=True, text=True)
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
-                                print("Correct!!!!")
+                                print("Correct1!!!!")
+                                return render(request, 'practice.html')
                             else :
                                 print("Wrong!!!!")
                         else:
-                            print("Correct!!!!")
+                            print("Correct2!!!!")
+                            return render(request, 'practice.html')
                     else:
                         print("Wrong!!!!")
                 else :
-                    print("Correct!!!!")
+                    print("Correct3!!!!")
+                    return render(request, 'practice.html')
             else:
                 print("Wrong!!!!")
 
-
         user_code = user_answer
-        print(user_code)
         problem_content = problem.problem
         problem_input = problem.problem_input
         problem_output = problem.problem_output
@@ -108,7 +108,7 @@ def practice_start(request, id, hint_id=1):
                 
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'codecraft'
+            'Authorization': 'API입력'
         }
 
         hint = []
@@ -163,15 +163,18 @@ def real_start(request, id):
                             correct3 = subprocess.run(['python', path], input=test_3, capture_output=True, text=True)
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
-                                print("Correct!!!!")
+                                print("Correct1!!!!")
+                                return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
                             else :
                                 print("Wrong!!!!")
                         else:
-                            print("Correct!!!!")
+                            print("Correct2!!!!")
+                            return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
                     else:
                         print("Wrong!!!!")
                 else :
-                    print("Correct!!!!")
+                    print("Correct3!!!!")
+                    return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
             else:
                 print("Wrong!!!!")
 
