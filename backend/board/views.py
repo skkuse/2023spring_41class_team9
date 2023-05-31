@@ -1,19 +1,42 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Problems
+from user.models import User
 import random
 import subprocess
 import os
 import requests
 
+
 def practice(request):
-    return render(request, 'practice.html')
+    context = {}
+    username = None
+    if 'user' in request.session:
+        user_id = request.session['user']
+        user = User.objects.get(id=user_id)
+        username = user.username
+    context = {'username':username}
+    return render(request, 'practice.html', context)
 
 def real(request):
-    return render(request, 'real.html', {'random_number':random.randint(11,15)})
+
+    username = None
+    if 'user' in request.session:
+        user_id = request.session['user']
+        user = User.objects.get(id=user_id)
+        username = user.username
+
+    return render(request, 'real.html', {'username':username,'random_number':random.randint(11,15)})
 
 def practice_start(request, id, hint_id=1):
     problem = Problems.objects.get(problem_id=id)
+    context = {}
+    username = None
+    if 'user' in request.session:
+        user_id = request.session['user']
+        user = User.objects.get(id=user_id)
+        username = user.username
+
 
     if request.method == 'POST':      
         user_answer = request.POST.get('user_answer', '')  # 폼 요소의 name 속성 값을 사용하여 데이터 불러오기
@@ -83,6 +106,7 @@ def practice_start(request, id, hint_id=1):
             'Content-Type': 'application/json',
             'Authorization': 'codecraft'
         }
+
         hint = []
         cnt = 0
         for i in range(3):
@@ -100,8 +124,14 @@ def practice_start(request, id, hint_id=1):
     return render(request, 'practice_mode_start.html',{'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
 
 
+
 def real_start(request, id):
     problem = Problems.objects.get(problem_id=id)
+    username = None
+    if 'user' in request.session:
+        user_id = request.session['user']
+        user = User.objects.get(id=user_id)
+        username = user.username
 
     if request.method == 'POST':
         
@@ -140,10 +170,15 @@ def real_start(request, id):
             else:
                 print("Wrong!!!!")
 
-    return render(request, 'real_mode_start.html',{'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
-        
+    return render(request, 'real_mode_start.html',{'username':username,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
+
 
 def review(request):
-    return render(request, 'review.html')
+    username=None
+    if 'user' in request.session:
+        user_id = request.session['user']
+        user = User.objects.get(id=user_id)
+        username = user.username
+    return render(request, 'review.html',{"username":username})
 
 

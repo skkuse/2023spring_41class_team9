@@ -68,6 +68,15 @@
 	font-size:24px;
 	letter-spacing:0;
 }
+
+.bugjava_17_412{
+		font-family:Nunito;
+	text-align:left;
+	font-size:24px;
+	letter-spacing:0;
+		color:rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
+}
+
 .id_icon_75_2063 { 
 	width:35px;
 	height:34px;
@@ -83,7 +92,7 @@
 	height:28px;
 	position:absolute;
 	left:158px;
-	top:3px;
+	top:2px;
 }
 .score_text_27_106 { 
 	width:62.780487060546875px;
