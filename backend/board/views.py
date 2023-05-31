@@ -81,42 +81,48 @@ def practice_start(request, id, hint_id=1):
         problem_input = problem.problem_input
         problem_output = problem.problem_output
         prompt = f"문제는 다음과 같다.\n{problem_content}\n문제의 입력에 관한 설명은 다음과 같다.\n{problem_input}\n문제의 출력에 관한 설명은 다음과 같다.\n{problem_output}"
-        prompt_hint_1 = "해당 문제를 해결하기 위한 간단한 힌트를 줘."
-        prompt_hint_2 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 문제를 해결하기 위한 다음단계에 관한 간단한 힌트를 줘."
-        prompt_hint_3 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 코드를 보고 틀린 부분에 대한 간단한 힌트를 줘."
-        prompt_hint_4 = "해당 문제를 보고 python을 사용해 skeleton code를 짜줘."
+        prompt_hint_1 = "해당 문제를 해결하기 위한 20자 이내의 간단한 힌트를 줘."
+        prompt_hint_2 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 문제를 해결하기 위한 다음단계에 관한 20자 이내의 간단한 힌트를 줘."
+        prompt_hint_3 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 코드를 보고 틀린 부분에 대한 20자 이내의 간단한 힌트를 줘."
+        #prompt_hint_4 = "해당 문제를 보고 python을 사용해 정말 간단한 skeleton code를 짜줘."
+        contents=[]
+        contents.append(prompt + prompt_hint_1)
+        contents.append(prompt + prompt_hint_2)
+        contents.append(prompt + prompt_hint_3)
+        #contents.append(prompt + prompt_hint_4)
 
-        if hint_id == 1:
-            content = prompt + prompt_hint_1
-        elif hint_id == 2:
-            content = prompt + prompt_hint_2
-        elif hint_id == 3:
-            content = prompt + prompt_hint_3
-        elif hint_id == 4:
-            content = prompt + prompt_hint_4
         url = 'https://api.openai.com/v1/chat/completions'
-        payload = {
-            'messages': [
-            {'role': 'user', 'content': content}
-        ],
-        'model': 'gpt-3.5-turbo',
-        'max_tokens': 1000
-        }
-
+        payload=[0, 0, 0]
+        for i in range(3):
+            payload[i] = {
+                'messages': [
+                {'role': 'user', 'content': contents[i]}
+                ],
+                'model': 'gpt-3.5-turbo',
+                'max_tokens': 1000
+            }
+                
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': 'codecraft'
         }
-        response = requests.post(url, json=payload, headers=headers)
 
+        hint = []
+        cnt = 0
+        for i in range(3):
+            response = requests.post(url, json=payload[i], headers=headers)
+            print(response.status_code)
+            if (response.status_code == 200):
+                hint.append(response.json()['choices'][0]['message']['content'])
+                print(hint[i])
+                cnt = cnt + 1
+                if cnt == 3:
+                    return render(request, 'practice_mode_start.html',{'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3, 'hint1': hint[0],'hint2': hint[1], 'hint3': hint[2]})
+            else:
+                return HttpResponse('An error occurred')
+        
+    return render(request, 'practice_mode_start.html',{'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
 
-        if response.status_code == 200:
-            hint = response.json()['choices'][0]['message']['content']
-            return render(request, 'practice_mode_start.html',{'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3, 'hint': hint})
-        else:
-            return HttpResponse('An error occurred', status=response.status_code)
-    
-    return render(request, 'practice_mode_start.html',{'username':username,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
 
 
 def real_start(request, id):
