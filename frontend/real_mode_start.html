@@ -9,8 +9,8 @@
     <link rel="import" href="testContents.html" />
   </head>
 
-  <body > 
-    <!-- onload="timer()" -->
+  <body onload="timer()"> 
+    
 {% include 'includes/logo.html' %}
 
     <div class="problem_area">
@@ -111,7 +111,6 @@ function timer() {
   }
 }
 
-timer();
 
 function countdown() {
   var timerElement = document.getElementById("Timer");
