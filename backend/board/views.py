@@ -191,3 +191,16 @@ def review(request):
     return render(request, 'review.html',{"user":user})
 
 
+def review_mode(request):
+    context = {}
+    user = None
+    if 'user' in request.session:
+        user_id = request.session['user']
+        user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
+    problems_content = Problems.objects.all()[:10]
+    problem_title = Problems.objects.all()[:10]
+    context = {'user_name':user, 'problem_title':problem_title[0],'problem_content':problems_content[0]}
+    return render(request, 'review_mode.html', context)
+
