@@ -74,7 +74,7 @@
             </div>
             <div class="time_area">
                 <div class ="time_icon"></div>
-                <div class ="time">1:27</div>
+                <div class ="time" id="Timer">03:00</div>
             </div>
 
 
@@ -93,15 +93,31 @@
         </div>
     </form>
     </div>
-    <!--
-    <div class=footer>
-        
-        <button class="home_icon"></button>
-        <div class ="to_home">메인으로</div>  
-        <button class="question_icon"></button>
-        <div class ="question">도움말</div>  
-    </div> 
-       -->     
+   
 </body>
 
+<script>
+    function countdown() {
+  var timerElement = document.getElementById("Timer");
+  var remainingTime = 3 * 60; // 3 minutes in seconds
+
+  var timerId = setInterval(updateTimer, 1000);
+
+  function updateTimer() {
+    var minutes = Math.floor(remainingTime / 60);
+    var seconds = remainingTime % 60;
+
+    var timeText = minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
+    timerElement.innerHTML = timeText;
+
+    if (remainingTime <= 0) {
+      clearInterval(timerId);
+
+    } else {
+      remainingTime--;
+    }
+  }
+}
+countdown();
+</script>
 </html>
