@@ -77,17 +77,18 @@
 
         </div>
         </div>
-        <form method="POST">
-            {% csrf_token %}
-        <div class="put_answer">
-            
-            <textarea  type="text" class = "user_answer" name="user_answer" placeholder="정답을 입력하세요" id="user_answer"></textarea>
         
+        <div class="put_answer">
+            <form method="POST">
+                {% csrf_token %}
+            <textarea  type="text" class = "user_answer" name="user_answer" placeholder="정답을 입력하세요" id="user_answer"></textarea>
             <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')">제출</button>
             <div class="submit_icon" ></div>
+            
+        </form>
         
         </div>
-    </form>
+    
     </div>
     <!--
     <div class=footer>
