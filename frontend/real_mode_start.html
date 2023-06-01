@@ -62,10 +62,10 @@
 
 
       </div>
-      
-      <div class="put_answer">
-        <form method="POST">
+      <form method="POST">
           {% csrf_token %}
+      <div class="put_answer">
+        
         <textarea
           type="text"
           class="user_answer"
@@ -78,9 +78,9 @@
           제출
         </button>
         <div class="submit_icon"></div>
-      </form>
+      
       </div>
-  
+     </form>
     </div>
 
     <!-- <div class="footer">
