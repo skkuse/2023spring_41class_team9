@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Problems
 from user.models import User
@@ -10,33 +10,36 @@ import requests
 
 def practice(request):
     context = {}
-    username = None
+    user = None
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-        username = user.username
-    context = {'username':username}
+    else:
+        return redirect('/user/login/')
+    problems = Problems.objects.all()[:10]
+    context = {'user':user, 'problems':problems}
     return render(request, 'practice.html', context)
 
 def real(request):
 
-    username = None
+    user = None
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-        username = user.username
+    else:
+        return redirect('/user/login/')
 
-    return render(request, 'real.html', {'username':username,'random_number':random.randint(11,15)})
+    return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
 
 def practice_start(request, id, hint_id=1):
     problem = Problems.objects.get(problem_id=id)
     context = {}
-    username = None
+    user = None
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-        username = user.username
-
+    else:
+        return redirect('/user/login/')
 
     if request.method == 'POST':      
         user_answer = request.POST.get('user_answer', '')  # 폼 요소의 name 속성 값을 사용하여 데이터 불러오기
@@ -62,21 +65,22 @@ def practice_start(request, id, hint_id=1):
                             correct3 = subprocess.run(['python', path], input=test_3, capture_output=True, text=True)
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
-                                print("Correct!!!!")
+                                print("Correct1!!!!")
+                                return render(request, 'practice.html')
                             else :
                                 print("Wrong!!!!")
                         else:
-                            print("Correct!!!!")
+                            print("Correct2!!!!")
+                            return render(request, 'practice.html')
                     else:
                         print("Wrong!!!!")
                 else :
-                    print("Correct!!!!")
+                    print("Correct3!!!!")
+                    return render(request, 'practice.html')
             else:
                 print("Wrong!!!!")
 
-
         user_code = user_answer
-        print(user_code)
         problem_content = problem.problem
         problem_input = problem.problem_input
         problem_output = problem.problem_output
@@ -104,7 +108,7 @@ def practice_start(request, id, hint_id=1):
                 
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'codecraft'
+            'Authorization': 'API입력'
         }
 
         hint = []
@@ -121,17 +125,18 @@ def practice_start(request, id, hint_id=1):
             else:
                 return HttpResponse('An error occurred')
         
-    return render(request, 'practice_mode_start.html',{'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
-
+    return render(request, 'practice_mode_start.html',{'user':user,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
 
 
 def real_start(request, id):
     problem = Problems.objects.get(problem_id=id)
-    username = None
+    user = None
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-        username = user.username
+    else:
+        return redirect('/user/login/')
+
 
     if request.method == 'POST':
         
@@ -158,27 +163,31 @@ def real_start(request, id):
                             correct3 = subprocess.run(['python', path], input=test_3, capture_output=True, text=True)
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
-                                print("Correct!!!!")
+                                print("Correct1!!!!")
+                                return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
                             else :
                                 print("Wrong!!!!")
                         else:
-                            print("Correct!!!!")
+                            print("Correct2!!!!")
+                            return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
                     else:
                         print("Wrong!!!!")
                 else :
-                    print("Correct!!!!")
+                    print("Correct3!!!!")
+                    return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
             else:
                 print("Wrong!!!!")
 
-    return render(request, 'real_mode_start.html',{'username':username,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
+    return render(request, 'real_mode_start.html',{'user':user,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
 
 
 def review(request):
-    username=None
+    user=None
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-        username = user.username
-    return render(request, 'review.html',{"username":username})
+    else:
+        return redirect('/user/login/')
+    return render(request, 'review.html',{"user":user})
 
 

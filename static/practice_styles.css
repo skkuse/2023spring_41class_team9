@@ -21,13 +21,41 @@
 	left:9px;
 	top:296px;
 }
+
+.bg_locked{
+	background-image:url(images/lock_gray.png)!important;
+}
+.bg-opened{
+	background-image:url(images/story_1.png)!important;
+
+}
+.bg-crown-0{
+	background-image:url(images/crown0_2.png)!important;
+
+}
+.bg-crown-1{
+	background-image:url(images/crown1_1.png)!important;
+
+}
+.bg-crown-2{
+	background-image:url(images/crown2_1.png)!important;
+
+}
+.bg-crown-3{
+	background-image:url(images/crown3.png)!important;
+
+}
+.bg-start{
+	background-image:url(images/start_1.png)!important;
+
+}
 .lock_gray_1_79_8558 { 
 	width:70px;
 	height:65px;
 	position:absolute;
 	left:0px;
 	top:0px;
-	background-image:url(images/lock_gray.png);
+	/*background-image:url(images/lock_gray.png);*/
 	background-repeat:no-repeat;
 	background-size:cover;
 }
@@ -306,7 +334,7 @@
 	position:absolute;
 	left:11px;
 	top:17px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:center;
 	font-size:32px;
 	letter-spacing:0;
@@ -318,7 +346,7 @@
 	position:absolute;
 	left:38px;
 	top:75px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:20px;
 	letter-spacing:0.10000000149011612;
@@ -396,7 +424,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
@@ -415,7 +443,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:right;
 	font-size:14px;
 	letter-spacing:-2;
@@ -481,7 +509,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
@@ -500,7 +528,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:right;
 	font-size:14px;
 	letter-spacing:-2;
@@ -566,7 +594,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
@@ -585,7 +613,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:right;
 	font-size:14px;
 	letter-spacing:-2;
@@ -651,7 +679,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
@@ -670,7 +698,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:right;
 	font-size:14px;
 	letter-spacing:-2;
@@ -745,7 +773,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
@@ -764,7 +792,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:right;
 	font-size:14px;
 	letter-spacing:-2;
@@ -830,7 +858,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
@@ -849,7 +877,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:right;
 	font-size:14px;
 	letter-spacing:-2;
@@ -878,7 +906,7 @@
 	position:absolute;
 	left:35px;
 	top:6px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:20px;
 	letter-spacing:0;
@@ -924,7 +952,7 @@
 	position:absolute;
 	left:47px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:center;
 	font-size:20px;
 	letter-spacing:0;
@@ -953,7 +981,7 @@
 	position:absolute;
 	left:47px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:center;
 	font-size:20px;
 	letter-spacing:0;
@@ -1014,14 +1042,14 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:24px;
 	letter-spacing:0;
 }
 
 .bugjava_i32_478_17_412 {
-		font-family:Nunito;
+		font-family:Inter;
 	text-align:left;
 	font-size:24px;
 	letter-spacing:0;
@@ -1058,7 +1086,7 @@
 	position:absolute;
 	left:0px;
 	top:0px;
-	font-family:Nunito;
+	font-family:Inter;
 	text-align:left;
 	font-size:24px;
 	letter-spacing:0;

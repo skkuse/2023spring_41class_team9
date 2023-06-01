@@ -12,7 +12,7 @@
     <link rel="import" href="testContents.html">
     <script>
         function showHint(hintMessage, id) {
-        // 팝업 창 생성
+
         var hint = hintMessage; 
         if (id == 'hint1'){
             hint_msg = "문제 정보에 관한 힌트를 쓰시겠습니까?";
@@ -23,16 +23,11 @@
         else if(id == 'hint3'){
             hint_msg = "틀린부분에 대한한 힌트를 쓰시겠습니까?";
         }
-        // else if(id == 'hint4'){
-        //     hint_msg = "skeleton에 관한 힌트를 쓰시겠습니까?";
-        // }
         
         var confirmMessage = confirm(hint_msg); 
         
         if (confirmMessage) {
-            // 확인 버튼을 클릭한 경우
             alert(hintMessage);
-            // 추가로 필요한 작업 수행
         } 
         }
     </script>
@@ -49,6 +44,7 @@
         <div class="provlem_input">{{problem_input}}</div>
         <div class="provlem_output">{{problem_output}}</div>
         <!--<div class="io_example">{{io_example1}}{{io_example2}}{{io_example3}}{{io_ex_answer1}}{{io_ex_answer2}}{{io_ex_answer3}}</div>-->
+        <br>
         <div class="io_example">
             {% if io_example1 %}{{ io_example1 | linebreaksbr}}<br><br>{% endif %}
             {% if io_example2 %}{{ io_example2 | linebreaksbr }}<br><br>{% endif %}
@@ -67,7 +63,7 @@
         <div class="hint_n_time">
             <div class="hint_area">
 
-                <button class="hint" onclick="showHint('{{hint1}}', 'hint1')" id="hint1"></button>
+                <button class="hint" onclick="showHint('{{hint1}}', 'hint1')" ></button>
                 <button class="hint" onclick="showHint('{{hint2}}', 'hint2')" ></button>
                 <button class="hint" onclick="showHint('{{hint3}}', 'hint3')" ></button>
 
@@ -81,26 +77,17 @@
 
         </div>
         </div>
-        
+        <form method="POST">
+            {% csrf_token %}
         <div class="put_answer">
-            <form method="POST">
-                {% csrf_token %}
+            
             <textarea  type="text" class = "user_answer" name="user_answer" placeholder="정답을 입력하세요" id="user_answer"></textarea>
         
-            <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')"
-            >제출</button>
+            <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')">제출</button>
             <div class="submit_icon" ></div>
-        </form>
+        
         </div>
-    
-    <!-- <div class="put_answer">
-        <textarea  type="text" class = "user_answer" name="user_answer" placeholder="정답을 입력하세요" id="user_answer"></textarea>
-
-        <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')"
-        >제출</button>
-        <div class="submit_icon" ></div>
-    
-    </div> -->
+    </form>
     </div>
     <!--
     <div class=footer>

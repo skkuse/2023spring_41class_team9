@@ -14,7 +14,7 @@
             <div class=map_27_949>
             <a href="{% url 'problem-view' id=1 %}">
                 <div class=stage9_79_8557>
-                    <div class="lock_gray_1_79_8558"></div>
+                    <div class="bg_locked lock_gray_1_79_8558"></div>
                 </div>
             </a>
             <a href="{% url 'problem-view' id=2 %}">
@@ -62,8 +62,8 @@
                 </div>
             </a>
                 <a href="{% url 'problem-view' id=10 %}">
-                <div class=stage1_79_8536>
-                    <div class="story_1_79_8538"></div>
+                <div class= stage1_79_8536>
+                    <div class="  bg_locked story_1_79_8538"></div>
                     <div class="crown3_79_8539"></div>
                 </div>
             </a>
@@ -174,30 +174,33 @@
                     </div>
                     <div class=frame_299_i32_353_79_10928>
                         <div class=mypage_i32_353_79_9976>
-                            <div class="mypage_icon_i32_353_79_9682"></div>
-                            <span class="mypate_text_i32_353_79_9980">마이페이지</span>
+                            <a href="/user/logout">
+                                <div class="mypage_icon_i32_353_79_9682"></div>
+                                <span class="mypate_text_i32_353_79_9980">로그아웃</span>
+                            </a>
                         </div>
                         <div class=review_note_i32_353_79_9514>
-                            <div class="note_icon_i32_353_79_9675"></div>
-                            <span class="note_text_i32_353_79_9522">오답노트</span>
+                            <a href="/board/review">
+                                <div class="note_icon_i32_353_79_9675"></div>
+                                <span class="note_text_i32_353_79_9522">오답노트</span>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <a href="/">
                 <span class="code_craft_i32_353_17_292">Code Craft</span>
-                <div class="leftrectangle_i32_353_17_423"></div>
             </a>
             </div>
             <div class=score_id_32_478>
                 <div class=id_i32_478_27_104>
                     <div class=id_text_i32_478_27_108>
-                        <span class="bugjava_i32_478_17_411">{{ username }}</span>
+                        <span class="bugjava_i32_478_17_411">{{ user.username }}</span>
                     </div>
                     <div class="id_icon_i32_478_75_2063"></div>
                 </div>
                 <div class=score_i32_478_27_103>
                     <div class=id_text_i32_478_27_108>
-                        <span class="bugjava_i32_478_17_412">263</span>
+                        <span class="bugjava_i32_478_17_412">{{ user.score }}</span>
                     </div>
                     <div class=score_icon_i32_478_82_269></div>
                 </div>
