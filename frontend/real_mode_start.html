@@ -16,9 +16,12 @@
     <div class="problem_area">
       <div class="problem_title"> {{problem_title}}</div>
       <div class="provlem_content">{{problem_content}}</div>
+      <div class =io_example_area>
       <div class="provlem_input">{{problem_input}}</div>
+      <br>
       <div class="provlem_output">{{problem_output}}</div>
       <!--<div class="io_example">{{io_example1}}{{io_example2}}{{io_example3}}{{io_ex_answer1}}{{io_ex_answer2}}{{io_ex_answer3}}</div>-->
+      <br>
       <div class="io_example">
           {% if io_example1 %}{{ io_example1 | linebreaksbr}}<br><br>{% endif %}
           {% if io_example2 %}{{ io_example2 | linebreaksbr }}<br><br>{% endif %}
@@ -27,6 +30,7 @@
           {% if io_ex_answer2 %}{{ io_ex_answer2 | linebreaksbr }}<br><br>{% endif %}
           {% if io_ex_answer3 %}{{ io_ex_answer3 | linebreaksbr }}<br><br>{% endif %}
         </div>
+      </div>
   </div>
     <div class="midline"></div>
 
