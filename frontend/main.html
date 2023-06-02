@@ -8,34 +8,34 @@
     </head>
     <body>
         <div class=main_sb>
-            
             <div class=welcome>
                 <span class="welcome_text">다시오신것을 환영해요 {{user.username}}님!</span>
                 <div class="welcome_icon"></div>
             </div>
             {% include "includes/logo.html" %}
 
-
-            <div class=leftbar>
-                <div class=ranking>
-                    {% include "includes/ranking.html" %}
-                    <div class=my_frame>
-                        <div class=mypage>
-                            <a href="user/logout">
-                                <div class="logout_icon"></div>
-                                <span class="logout_text">로그아웃</span>
-                            </a>
-                        </div>
-                        <div class=review_note>
-                            <a href="board/review">
-                                <div class="note_icon"></div>
-                                <span class="note_text">오답노트</span>
-                            </a>
-                        </div>
+            <div class="leftbar">
+                <div class="ranking">
+                  {% include "includes/ranking.html" %}
+                  <div class="my_frame">
+                    <div class="mypage">
+                      <a href="/user/logout">
+                        <div class="logout_icon"></div>
+                        <span class="logout_text">로그아웃</span>
+                      </a>
                     </div>
+        
+                    <div class="review_note">
+                      <a href="/board/review">
+                        <div class="note_icon"></div>
+                        <span class="note_text">오답노트</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-
+              </div>
             </div>
+            
             <div class=pracmode_group>
               <a href="board/practice">
                 <div class=pracmode>
