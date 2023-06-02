@@ -41,7 +41,6 @@
 
   top: 4.5625rem;
   display: flex;
-  /* height : 100%; */
   align-items: center;
   justify-content: center;
   flex-direction: row;
@@ -51,8 +50,6 @@
 .logo_header {
   width: inherit;
   height: 2.5rem;
-  /* margin: 0 auto; */
-  /* object-fit: contain; */
   background-repeat: no-repeat;
   background-image: url("/static/img/CodeCraft.png");
   background-size: contain;
