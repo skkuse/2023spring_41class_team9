@@ -659,31 +659,28 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
-/* .a79_11094 { 
-	border:2px solid rgba(0, 0, 0, 1);
-} */
-.score_id_32_2548 {
+.user_id {
   width: 257px;
   height: 33px;
   position: absolute;
   left: 1162px;
   top: 65px;
 }
-.id_i32_2548_27_104 {
+.username_id {
   width: 132px;
   height: 33px;
   position: absolute;
   left: 0px;
   top: 0px;
 }
-.id_text_i32_2548_27_108 {
+.user_info {
   width: 92px;
   height: 33px;
   position: absolute;
   left: 40px;
   top: 0px;
 }
-.bugjava_i32_2548_17_411 {
+.username_text {
   color: rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
   width: 92px;
   height: 33px;
@@ -696,14 +693,15 @@
   letter-spacing: 0;
 }
 
-.bugjava_i32_2548_17_415 {
-  color: rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
+.score_text {
   font-family: Inter;
   text-align: left;
   font-size: 24px;
   letter-spacing: 0;
+  color: rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
 }
-.id_icon_i32_2548_75_2063 {
+
+.user_icon {
   width: 35px;
   height: 34px;
   position: absolute;
@@ -713,8 +711,21 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.id_icon_i32_2548_82_269 {
+.score_id {
+  width: 99px;
+  height: 28px;
+  position: absolute;
+  left: 158px;
+  top: 2px;
+}
+.score_text {
+  width: 62.780487060546875px;
+  height: 21px;
+  position: absolute;
+  left: 42px;
+  top: 3px;
+}
+.score_icon {
   width: 27px;
   height: 28px;
   position: absolute;
@@ -723,39 +734,6 @@
   background-image: url(images/score_icon.png);
   background-repeat: no-repeat;
   background-size: cover;
-}
-.score_i32_2548_27_103 {
-  width: 99px;
-  height: 28px;
-  position: absolute;
-  left: 158px;
-  top: 3px;
-}
-.score_text_i32_2548_27_106 {
-  width: 62.780487060546875px;
-  height: 21px;
-  position: absolute;
-  left: 40px;
-  top: 0px;
-}
-/*.263_i32_2548_17_415 { */
-/*	color:rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);*/
-/*	width:62.780487060546875px;*/
-/*	height:21px;*/
-/*	position:absolute;*/
-/*	left:0px;*/
-/*	top:0px;*/
-/*	font-family:Inter;*/
-/*	text-align:left;*/
-/*	font-size:24px;*/
-/*	letter-spacing:0;*/
-/*}*/
-.score_icon_i32_2548_27_107 {
-  width: 26.560976028442383px;
-  height: 28px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
 }
 .vector_5_i32_2548_17_416 {
   background-color: rgba(

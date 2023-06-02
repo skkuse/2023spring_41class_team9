@@ -3,7 +3,6 @@
         <meta charset="utf-8">
         <title>Main Page</title>
         <meta name="description" content="Main Page">
-        <meta name="author" content="htmlGenerator">
         <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
@@ -11,26 +10,27 @@
     </head>
     <body>
         <div class=main_sb_17_282>
-            <div class=welcome_17_283>
-                <span class="welcome_text_17_284">다시오신것을 환영해요 {{user.username}}님!</span>
-                <div class="welcome_icon_27_148"></div>
-            </div>
             
+            <div class=welcome>
+                <span class="welcome_text">다시오신것을 환영해요 {{user.username}}님!</span>
+                <div class="welcome_icon"></div>
+            </div>
 
-            <div class=score_id_27_149>
-                <div class=id_27_104>
-                    <div class=id_text_27_108>
-                        <span class="bugjava_17_411">{{user.username}}</span>
+            <div class=user_id>
+                <div class=username_id>
+                    <div class=user_info>
+                        <span class="username_text">{{user.username}}</span>
                     </div>
-                    <div class="id_icon_75_2063"></div>
+                    <div class="user_icon"></div>
                 </div>
-                <div class=score_27_103>
-                    <div class=id_text_27_108>
-                        <span class="bugjava_17_412">{{ user.score }}</span>
+                <div class=score_id>
+                    <div class=user_info>
+                        <span class="score_text">{{ user.score }}</span>
                     </div>
-                    <div class=score_icon_82_269></div>
+                    <div class=score_icon></div>
                 </div>
             </div>
+
 
             <div class=leftbar>
                 <div class=ranking>

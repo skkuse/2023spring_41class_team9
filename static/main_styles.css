@@ -7,14 +7,14 @@
   height: 833px;
   position: absolute;
 }
-.welcome_17_283 {
+.welcome {
   width: 675px;
   height: 97px;
   position: absolute;
   left: 461px;
   top: 149px;
 }
-.welcome_text_17_284 {
+.welcome_text {
   color: rgba(75.00000312924385, 75.00000312924385, 75.00000312924385, 1);
   width: 566px;
   height: 55px;
@@ -25,7 +25,7 @@
   font-size: 40px;
   letter-spacing: -3;
 }
-.welcome_icon_27_148 {
+.welcome_icon {
   width: 93px;
   height: 97px;
   position: absolute;
@@ -35,28 +35,28 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.score_id_27_149 {
+.user_id {
   width: 257px;
   height: 33px;
   position: absolute;
   left: 1162px;
   top: 65px;
 }
-.id_27_104 {
+.username_id {
   width: 132px;
   height: 33px;
   position: absolute;
   left: 0px;
   top: 0px;
 }
-.id_text_27_108 {
+.user_info {
   width: 92px;
   height: 33px;
   position: absolute;
   left: 40px;
   top: 0px;
 }
-.bugjava_17_411 {
+.username_text {
   color: rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
   width: 92px;
   height: 33px;
@@ -69,7 +69,7 @@
   letter-spacing: 0;
 }
 
-.bugjava_17_412 {
+.score_text {
   font-family: Inter;
   text-align: left;
   font-size: 24px;
@@ -77,7 +77,7 @@
   color: rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
 }
 
-.id_icon_75_2063 {
+.user_icon {
   width: 35px;
   height: 34px;
   position: absolute;
@@ -87,21 +87,21 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.score_27_103 {
+.score_id {
   width: 99px;
   height: 28px;
   position: absolute;
   left: 158px;
   top: 2px;
 }
-.score_text_27_106 {
+.score_text {
   width: 62.780487060546875px;
   height: 21px;
   position: absolute;
   left: 42px;
   top: 3px;
 }
-.score_icon_82_269 {
+.score_icon {
   width: 27px;
   height: 28px;
   position: absolute;
