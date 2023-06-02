@@ -35,20 +35,9 @@
           <span class="start_text_2_1406">시작하기</span>
         </div>
       </a>
-      <div class="user_id">
-        <div class="username_id">
-          <div class="user_info">
-            <span class="username_text">{{user.username}}</span>
-          </div>
-          <div class="user_icon"></div>
-        </div>
-        <div class="score_id">
-          <div class="user_info">
-            <span class="score_text">{{ user.score }}</span>
-          </div>
-          <div class="score_icon"></div>
-        </div>
-      </div>
+
+      {% include "includes/logo.html" %}
+
       <div class="leftbar">
         <div class="ranking">
           <div class="ranking_frame">
@@ -157,24 +146,7 @@
             </div>
           </div>
         </div>
-        <a href="/">
-          <span class="code_craft_i32_2194_17_292">Code Craft</span>
-        </a>
       </div>
-      <!-- <div class=score_id_32_2319>
-                <div class=id_i32_2319_27_104>
-                    <div class=id_text_i32_2319_27_108>
-                        <span class="bugjava_i32_2319_17_411">{{ username }}</span>
-                    </div>
-                    <div class="id_icon_i32_2319_75_2063"></div>
-                </div>
-                <div class=score_i32_2319_27_103>
-                    <div class=score_text_i32_2319_27_106>
-                        <span class="id_icon_i32_2319_17_415">263</span>
-                    </div>
-                    <div class=score_icon_i32_2319_82_269></div>
-                </div>
-            </div> -->
     </div>
   </body>
 </html>

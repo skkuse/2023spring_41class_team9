@@ -15,21 +15,7 @@
                 <span class="welcome_text">다시오신것을 환영해요 {{user.username}}님!</span>
                 <div class="welcome_icon"></div>
             </div>
-
-            <div class=user_id>
-                <div class=username_id>
-                    <div class=user_info>
-                        <span class="username_text">{{user.username}}</span>
-                    </div>
-                    <div class="user_icon"></div>
-                </div>
-                <div class=score_id>
-                    <div class=user_info>
-                        <span class="score_text">{{ user.score }}</span>
-                    </div>
-                    <div class=score_icon></div>
-                </div>
-            </div>
+            {% include "includes/logo.html" %}
 
 
             <div class=leftbar>
@@ -144,11 +130,6 @@
                         </div>
 
                     </div>
-                </div>
-                <div>
-                    <a href="/">
-                        <span class="code_craft_17_292">Code Craft</span>
-                    </a>
                 </div>
 
             </div>

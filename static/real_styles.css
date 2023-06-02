@@ -774,79 +774,82 @@
   left: 0px;
   top: 0px;
 }
-.user_id {
-  width: 257px;
-  height: 33px;
+.header {
+  width: 100%;
   position: absolute;
-  left: 1162px;
-  top: 65px;
-}
-.username_id {
-  width: 132px;
-  height: 33px;
+
+  top: 4.5625rem;
+  display: flex;
+  /* height : 100%; */
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
   position: absolute;
-  left: 0px;
-  top: 0px;
-}
-.user_info {
-  width: 92px;
-  height: 33px;
-  position: absolute;
-  left: 40px;
-  top: 0px;
-}
-.username_text {
-  color: rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
-  width: 92px;
-  height: 33px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  font-family: Inter;
-  text-align: left;
-  font-size: 24px;
-  letter-spacing: 0;
 }
 
-.score_text {
-  font-family: Inter;
-  text-align: left;
-  font-size: 24px;
-  letter-spacing: 0;
-  color: rgba(92.43750303983688, 92.43750303983688, 92.43750303983688, 1);
+.logo_header {
+  width: inherit;
+  height: 2.5rem;
+  /* margin: 0 auto; */
+  /* object-fit: contain; */
+  background-repeat: no-repeat;
+  background-image: url("/static/img/CodeCraft.png");
+  background-size: contain;
+  float: left;
+  margin-left: 5rem;
+  cursor: pointer;
+}
+
+.user_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  margin-right: 5rem;
+  float: right;
+  margin-bottom: 2rem;
+}
+
+.user_info {
+  width: auto;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+}
+
+.user_acc {
+  display: flex;
+  flex-direction: row;
 }
 
 .user_icon {
-  width: 35px;
-  height: 34px;
-  position: absolute;
-  left: -1px;
-  top: -1px;
-  background-image: url(images/id_icon.png);
+  width: 2rem;
+  height: 2rem;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("/static/img/user_icon.png");
+  background-size: contain;
+  margin-right: 0.3rem;
 }
-.score_id {
-  width: 99px;
-  height: 28px;
-  position: absolute;
-  left: 158px;
-  top: 2px;
+
+.user_name {
+  margin-right: 0.8rem;
+  flex-grow: 0;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: left;
+  color: #5c5c5c;
 }
-.score_text {
-  width: 62.780487060546875px;
-  height: 21px;
-  position: absolute;
-  left: 42px;
-  top: 3px;
-}
-.score_icon {
-  width: 27px;
-  height: 28px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  background-image: url(images/score_icon.png);
+
+.user_score_icon {
+  width: 2rem;
+  height: 2rem;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("/static/img/score.png");
+  background-size: contain;
+  /* margin-right:0.3rem; */
 }
