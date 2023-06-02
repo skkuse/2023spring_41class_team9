@@ -1,4 +1,4 @@
-._____sb_2_472 {
+.review_sb {
   background-color: rgba(255, 255, 255, 1);
   width: 1480px;
   height: 833px;
@@ -751,6 +751,7 @@
   left: 0px;
   top: 0px;
 }
+
 .leftbar {
   width: 389px;
   height: 833px;
@@ -786,7 +787,7 @@
   left: 0px;
   top: 0px;
 }
-.learderboard_selection_32_1659 {
+.learderboard_selection_1 {
   width: 276px;
   height: 45px;
   position: absolute;
@@ -797,7 +798,7 @@
   border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
 }
-.rectangle_30_i32_1659_74_99 {
+.rectangle_1 {
   background-color: rgba(
     137.00000703334808,
     226.0000017285347,
@@ -876,7 +877,7 @@
   left: 0px;
   top: 0px;
 }
-.learderboard_selection_17_365 {
+.learderboard_selection_2 {
   width: 276px;
   height: 45px;
   position: absolute;
@@ -887,7 +888,7 @@
   border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
 }
-.rectangle_30_i17_365_74_99 {
+.rectangle_2 {
   background-color: rgba(
     137.00000703334808,
     226.0000017285347,
@@ -966,7 +967,7 @@
   left: 0px;
   top: 0px;
 }
-.learderboard_selection_17_347 {
+.learderboard_selection_3 {
   width: 276px;
   height: 45px;
   position: absolute;
@@ -977,7 +978,7 @@
   border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
 }
-.rectangle_30_i17_347_74_99 {
+.rectangle_3 {
   background-color: rgba(
     137.00000703334808,
     226.0000017285347,
@@ -1056,7 +1057,7 @@
   left: 0px;
   top: 0px;
 }
-.learderboard_selection_17_297 {
+.learderboard_selection_4 {
   width: 276px;
   height: 45px;
   position: absolute;
@@ -1067,7 +1068,7 @@
   border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
 }
-.rectangle_30_i17_297_74_99 {
+.rectangle_4 {
   background-color: rgba(
     137.00000703334808,
     226.0000017285347,
@@ -1155,7 +1156,7 @@
   left: 0px;
   top: 0px;
 }
-.learderboard_selection_17_315 {
+.learderboard_selection_5 {
   width: 271.8874206542969px;
   height: 45px;
   position: absolute;
@@ -1166,7 +1167,7 @@
   border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
 }
-.rectangle_30_i17_315_74_99 {
+.rectangle_5 {
   background-color: rgba(
     137.00000703334808,
     226.0000017285347,
@@ -1245,7 +1246,7 @@
   left: 0px;
   top: 0px;
 }
-.learderboard_selection_17_331 {
+.learderboard_selection_6 {
   width: 276px;
   height: 45px;
   position: absolute;
@@ -1256,7 +1257,7 @@
   border-bottom-left-radius: 13px;
   border-bottom-right-radius: 13px;
 }
-.rectangle_30_i17_331_74_99 {
+.rectangle_6 {
   background-color: rgba(
     137.00000703334808,
     226.0000017285347,
@@ -1321,14 +1322,14 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.ranking_title_79_9458 {
+.ranking_title {
   width: 114px;
   height: 31px;
   position: absolute;
   left: 24px;
   top: 21px;
 }
-.ranking_text_79_9459 {
+.ranking_text {
   color: rgba(25.344168841838837, 42.5000012665987, 11.864582151174545, 1);
   width: 79px;
   height: 20px;
@@ -1340,7 +1341,7 @@
   font-size: 20px;
   letter-spacing: 0;
 }
-.trophy_79_9460 {
+.trophy {
   width: 31px;
   height: 31px;
   position: absolute;
@@ -1350,131 +1351,69 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.mypage_button_79_9461 {
-  width: 233px;
-  height: 64px;
+.my_frame {
+  width: 177px;
+  height: 77px;
   position: absolute;
-  left: 34px;
-  top: 543px;
+  left: 84px;
+  top: 511px;
 }
-.mypage_i79_9461_25_127 {
+.mypage {
   width: 177px;
   height: 27px;
   position: absolute;
-  left: 50px;
-  top: 18px;
-}
-.mypage_icon_i79_9461_25_128 {
-  width: 23.960121154785156px;
-  height: 27.227867126464844px;
-  position: absolute;
-  left: 8.519939422607422px;
-  top: -0.11393356323242188px;
-}
-.vector_i79_9461_25_129 {
-  background-color: rgba(
-    92.43750303983688,
-    92.43750303983688,
-    92.43750303983688,
-    1
-  );
-  width: 13.069156646728516px;
-  height: 13.069159507751465px;
-  position: absolute;
-  left: 5.4454498291015625px;
-  top: 0px;
-}
-.vector_i79_9461_25_130 {
-  background-color: rgba(
-    92.43750303983688,
-    92.43750303983688,
-    92.43750303983688,
-    1
-  );
-  width: 23.960121154785156px;
-  height: 10.890955924987793px;
-  position: absolute;
   left: 0px;
-  top: 16.336910247802734px;
+  top: 50px;
 }
-.______i79_9461_25_153 {
+.logout_icon {
+  width: 25px;
+  height: 29px;
+  position: absolute;
+  left: 8px;
+  top: -1px;
+  background-image: url(images/mypage_icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.logout_text {
   color: rgba(0, 0, 0, 1);
   width: 122px;
   height: 27px;
   position: absolute;
-  left: 46.48006057739258px;
+  left: 47px;
   top: 0px;
   font-family: Inter;
   text-align: center;
   font-size: 20px;
   letter-spacing: 0;
 }
-.review_button_79_9508 {
-  width: 251px;
-  height: 57px;
-  position: absolute;
-  left: 40px;
-  top: 502px;
-}
-.review_note_i79_9508_79_9486 {
-  width: 143px;
+
+.to_main {
+  width: 147px;
   height: 38px;
   position: absolute;
-  left: 53.89574432373047px;
-  top: 9.5px;
+  left: 4px;
+  top: 0px;
 }
-.house_i79_9508_79_9506 {
-  width: 37px;
-  height: 37px;
+.main_icon {
+  width: 33px;
+  height: 27px;
   position: absolute;
   left: 0px;
-  top: 0.5px;
+  top: 5.5px;
   background-image: url(images/house.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-._____i79_9508_79_9494 {
+.main_text {
   color: rgba(0, 0, 0, 1);
   width: 100px;
   height: 38px;
   position: absolute;
-  left: 43px;
+  left: 47px;
   top: 0px;
   font-family: Inter;
   text-align: center;
   font-size: 20px;
   letter-spacing: 0;
-}
-.code_craft_79_9463 {
-  background-image: linear-gradient(
-    0deg,
-    rgba(121.31036773324013, 140.58494746685028, 247.66580075025558, 1) 0%,
-    rgba(173.39995622634888, 0, 255, 0.6100000143051147) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  -ms-background-clip: text;
-  -ms-text-fill-color: transparent;
-  width: 238px;
-  height: 85px;
-  position: absolute;
-  left: 78px;
-  top: 74px;
-  font-family: Baloo;
-  text-align: center;
-  font-size: 54px;
-  letter-spacing: -4.5;
-}
-.leftrectangle_79_9464 {
-  border: 1px solid
-    rgba(221.00000202655792, 221.00000202655792, 221.00000202655792, 1);
-}
-.leftrectangle_79_9464 {
-  width: 389px;
-  height: 833px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
 }
