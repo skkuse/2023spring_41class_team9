@@ -1,164 +1,168 @@
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Real Mode</title>
-        <meta name="description" content="Real Mode">
-        <meta name="author" content="htmlGenerator">
-        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/static/real_styles.css">
-    </head>
-    <body>
-        <div class=________sb_2_1278>
-            <div class=real_mode_2_1400>
-                <div class="real_rectangle_2_1401"></div>
-                <span class="real_title_2_1402">실전모드</span>
-                <span class="real_content_2_1403">제한시간 이내에 랜덤 문제를 해결하여 자신의 실력을 증명하세요.
-
- 
-실전모드 규칙
-
-힌트는 제공되지 않습니다
-점수는 실시간으로 제공됩니다
-실전모드에서 쌓인 점수가 높을수록 랭킹이 올라갑니다.   
-
-실전모드에서 못 푼 문제는, 오답노트 페이지에서 다시 학습할 수 있습니다.
-</span>
-            </div>
-            <a href="{% url 'problem-view2' id=random_number %}">
-            <div class=start_button_2_1404>
-                <div class="start_rectangle_2_1405"></div>
-                <span class="start_text_2_1406">시작하기</span>
-            </div>
-          </a>
-          <div class=score_id_27_149>
-            <div class=id_27_104>
-                <div class=id_text_27_108>
-                    <span class="bugjava_17_411">{{user.username}}</span>
-                </div>
-                <div class="id_icon_75_2063"></div>
-            </div>
-            <div class=score_27_103>
-                <div class=id_text_27_108>
-                    <span class="bugjava_17_412">{{ user.score }}</span>
-                </div>
-                <div class=score_icon_82_269></div>
-            </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Real Mode</title>
+    <meta name="description" content="Real Mode" />
+    <meta name="author" content="htmlGenerator" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/real_styles.css" />
+  </head>
+  <body>
+    <div class="________sb_2_1278">
+      <div class="real_mode_2_1400">
+        <div class="real_rectangle_2_1401"></div>
+        <span class="real_title_2_1402">실전모드</span>
+        <span class="real_content_2_1403"
+          >제한시간 이내에 랜덤 문제를 해결하여 자신의 실력을 증명하세요.
+          실전모드 규칙 힌트는 제공되지 않습니다 점수는 실시간으로 제공됩니다
+          실전모드에서 쌓인 점수가 높을수록 랭킹이 올라갑니다. 실전모드에서 못
+          푼 문제는, 오답노트 페이지에서 다시 학습할 수 있습니다.
+        </span>
+      </div>
+      <a href="{% url 'problem-view2' id=random_number %}">
+        <div class="start_button_2_1404">
+          <div class="start_rectangle_2_1405"></div>
+          <span class="start_text_2_1406">시작하기</span>
         </div>
-            <div class=leftbar_32_2194>
-                <div class=ranking_i32_2194_17_293>
-                    <div class=ranking_frame_i32_2194_32_502>
-                        <div class=ann_17_380>
-                            <div class=friends_17_381>
-                                <div class=learderboard_selection_32_1659>
-                                    <div class="rectangle_30_i32_1659_74_99"></div>
-                                </div>
-                                <div class=inativo_25_189>
-                                    <span class="a1__forawhile_17_384">1위 forAwhile</span>
-                                </div>
-                                <div class=number_25_188>
-                                    <span class="a1_764_17_385">1,764</span>
-                                </div>
-                                <div class="mask_group_1_75_613"></div>
-                            </div>
-                        </div>
-                        <div class=corey_17_363>
-                            <div class=friends_17_364>
-                                <div class=learderboard_selection_17_365>
-                                    <div class="rectangle_30_i17_365_74_99"></div>
-                                </div>
-                                <div class=inativo_17_366>
-                                    <span class="a2__cookies_17_367">2위 Cookies</span>
-                                </div>
-                                <div class=number_25_187>
-                                    <span class="a1_256_17_368">1,256</span>
-                                </div>
-                                <div class="mask_group_2_75_921"></div>
-                            </div>
-                        </div>
-                        <div class=giana_17_345>
-                            <div class=friends_17_346>
-                                <div class=learderboard_selection_17_347>
-                                    <div class="rectangle_30_i17_347_74_99"></div>
-                                </div>
-                                <div class=inativo_17_348>
-                                    <span class="a3__helloworld_17_349">3위 HelloWorld</span>
-                                </div>
-                                <div class=number_25_186>
-                                    <span class="a1_142_17_362">1,142</span>
-                                </div>
-                                <div class="mask_group_3_75_1060"></div>
-                            </div>
-                        </div>
-                        <div class=zaire3_17_295>
-                            <div class=friends_17_296>
-                                <div class=learderboard_selection_17_297>
-                                    <div class="rectangle_30_i17_297_74_99"></div>
-                                </div>
-                                <div class=inativo_25_171>
-                                    <span class="a26__runtimeterror_25_170">26위 RuntimeTerror</span>
-                                </div>
-                                <div class=number_25_173>
-                                    <span class="a272_25_168">272</span>
-                                </div>
-                                <div class="mask_group_4_75_1151"></div>
-                            </div>
-                        </div>
-                        <div class=zaire2_17_312>
-                            <div class="rectangle_147_17_313"></div>
-                            <div class=friends_17_314>
-                                <div class=learderboard_selection_17_315>
-                                    <div class="rectangle_30_i17_315_74_99"></div>
-                                </div>
-                                <div class=inativo_17_316>
-                                    <span class="a27__bugjava_17_317">27위 BugJava</span>
-                                </div>
-                                <div class=number_25_174>
-                                    <span class="a263_17_328">263</span>
-                                </div>
-                                <div class="mask_group_5_75_1398"></div>
-                            </div>
-                        </div>
-                        <div class=zaire1_17_329>
-                            <div class=friends_17_330>
-                                <div class=learderboard_selection_17_331>
-                                    <div class="rectangle_30_i17_331_74_99"></div>
-                                </div>
-                                <div class=inativo_17_332>
-                                    <span class="a28__404error_17_333">28위 404error</span>
-                                </div>
-                                <div class=number_25_175>
-                                    <span class="a230_17_344">230</span>
-                                </div>
-                                <div class="mask_group_6_75_1510"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=ranking_title_i32_2194_25_156>
-                        <span class="ranking_text_i32_2194_17_397">Ranking</span>
-                        <div class="trophy_i32_2194_17_398"></div>
-                    </div>
-                    <div class=frame_299_i32_2194_79_10928>
-                        <div class=mypage_i32_2194_79_9976>
-                            <a href="/user/logout">
-                                <div class="mypage_icon_i32_2194_79_9682"></div>
-                                <span class="mypate_text_i32_2194_79_9980">로그아웃</span>
-                            </a>
-                        </div>
-                        <div class=review_note_i32_2194_79_9514>
-                            <a href="/board/review">
-                                <div class="note_icon_i32_2194_79_9675"></div>
-                                <span class="note_text_i32_2194_79_9522">오답노트</span>
-                            </a>
-                        </div>
-                    </div>
+      </a>
+      <div class="score_id_27_149">
+        <div class="id_27_104">
+          <div class="id_text_27_108">
+            <span class="bugjava_17_411">{{user.username}}</span>
+          </div>
+          <div class="id_icon_75_2063"></div>
+        </div>
+        <div class="score_27_103">
+          <div class="id_text_27_108">
+            <span class="bugjava_17_412">{{ user.score }}</span>
+          </div>
+          <div class="score_icon_82_269"></div>
+        </div>
+      </div>
+      <div class="leftbar_32_2194">
+        <div class="ranking_i32_2194_17_293">
+          <div class="ranking_frame_i32_2194_32_502">
+            <div class="first_user">
+              <div class="first_user_group">
+                <div class="learderboard_selection_32_1659">
+                  <div class="rectangle_30_i32_1659_74_99"></div>
                 </div>
-                <a href="/">
-                <span class="code_craft_i32_2194_17_292">Code Craft</span>
-            </a>
+                <div class="first_user_text">
+                  <span class="first_user_id">1위 forAwhile</span>
+                </div>
+                <div class="first_user_num">
+                  <span class="first_number">1,764</span>
+                </div>
+                <div class="first_group_"></div>
+              </div>
             </div>
-            <!-- <div class=score_id_32_2319>
+            <div class="second_user">
+              <div class="second_user_group">
+                <div class="learderboard_selection_17_365">
+                  <div class="rectangle_30_i17_365_74_99"></div>
+                </div>
+                <div class="second_user_text">
+                  <span class="second_user_id">2위 Cookies</span>
+                </div>
+                <div class="second_user_num">
+                  <span class="second_number">1,256</span>
+                </div>
+                <div class="second_group_"></div>
+              </div>
+            </div>
+            <div class="third_user">
+              <div class="third_user_group">
+                <div class="learderboard_selection_17_347">
+                  <div class="rectangle_30_i17_347_74_99"></div>
+                </div>
+                <div class="third_user_text">
+                  <span class="third_user_id">3위 HelloWorld</span>
+                </div>
+                <div class="third_user_num">
+                  <span class="third_number">1,142</span>
+                </div>
+                <div class="third_group_"></div>
+              </div>
+            </div>
+            <div class="fourth_user">
+              <div class="fourth_user_group">
+                <div class="learderboard_selection_17_297">
+                  <div class="rectangle_30_i17_297_74_99"></div>
+                </div>
+                <div class="fourth_user_text">
+                  <span class="fourth_user_id">26위 RuntimeTerror</span>
+                </div>
+                <div class="fourth_user_num">
+                  <span class="fourth_number">272</span>
+                </div>
+                <div class="fourth_group_"></div>
+              </div>
+            </div>
+            <div class="fifth_user">
+              <div class="current_user"></div>
+              <div class="fifth_user_group">
+                <div class="learderboard_selection_17_315">
+                  <div class="rectangle_30_i17_315_74_99"></div>
+                </div>
+                <div class="fifth_user_text">
+                  <span class="fifth_user_id">27위 BugJava</span>
+                </div>
+                <div class="fifth_user_num">
+                  <span class="fifth_number">263</span>
+                </div>
+                <div class="fifth_group_"></div>
+              </div>
+            </div>
+            <div class="sixth_user">
+              <div class="sixth_user_group">
+                <div class="learderboard_selection_17_331">
+                  <div class="rectangle_30_i17_331_74_99"></div>
+                </div>
+                <div class="sixth_user_text">
+                  <span class="sixth_user_id">28위 404error</span>
+                </div>
+                <div class="sixth_user_num">
+                  <span class="sixth_number">230</span>
+                </div>
+                <div class="sixth_group_"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ranking_title_i32_2194_25_156">
+            <span class="ranking_text_i32_2194_17_397">Ranking</span>
+            <div class="trophy_i32_2194_17_398"></div>
+          </div>
+          <div class="frame_299_i32_2194_79_10928">
+            <div class="mypage_i32_2194_79_9976">
+              <a href="/user/logout">
+                <div class="mypage_icon_i32_2194_79_9682"></div>
+                <span class="mypate_text_i32_2194_79_9980">로그아웃</span>
+              </a>
+            </div>
+            <div class="review_note_i32_2194_79_9514">
+              <a href="/board/review">
+                <div class="note_icon_i32_2194_79_9675"></div>
+                <span class="note_text_i32_2194_79_9522">오답노트</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="/">
+          <span class="code_craft_i32_2194_17_292">Code Craft</span>
+        </a>
+      </div>
+      <!-- <div class=score_id_32_2319>
                 <div class=id_i32_2319_27_104>
                     <div class=id_text_i32_2319_27_108>
                         <span class="bugjava_i32_2319_17_411">{{ username }}</span>
@@ -172,6 +176,6 @@
                     <div class=score_icon_i32_2319_82_269></div>
                 </div>
             </div> -->
-        </div>
-    </body>
+    </div>
+  </body>
 </html>
