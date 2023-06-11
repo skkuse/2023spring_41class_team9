@@ -22,7 +22,7 @@
 .bg_locked {
   background-image: url(images/lock_gray.png) !important;
 }
-.bg-opened {
+.bg_opened {
   background-image: url(images/story_1.png) !important;
 }
 .bg-crown-0 {
@@ -37,7 +37,7 @@
 .bg-crown-3 {
   background-image: url(images/crown3.png) !important;
 }
-.bg-start {
+.bg_start {
   background-image: url(images/start_1.png) !important;
 }
 .header {
@@ -115,31 +115,12 @@
   background-image: url("/static/img/score.png");
   background-size: contain;
 }
-.lock_gray_1_79_8558 {
-  width: 70px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .stage8_79_8553 {
   width: 70px;
   height: 65px;
   position: absolute;
   left: 170px;
   top: 296px;
-}
-.lock_gray_1_79_8554 {
-  width: 70px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  background-image: url(images/lock_gray.png);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .stage7_79_8555 {
   width: 70px;
@@ -148,32 +129,12 @@
   left: 332px;
   top: 296px;
 }
-.lock_gray_1_79_8556 {
-  width: 70px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  background-image: url(images/lock_gray.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .stage6_79_8551 {
   width: 70px;
   height: 65px;
   position: absolute;
   left: 497px;
   top: 271px;
-}
-.lock_gray_1_79_8552 {
-  width: 70px;
-  height: 65px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  background-image: url(images/lock_gray.png);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .stage5_79_8548 {
   width: 87px;
@@ -182,52 +143,12 @@
   left: 651px;
   top: 103px;
 }
-.lock_gray_1_79_8547 {
-  width: 70px;
-  height: 65px;
-  position: absolute;
-  left: 8px;
-  top: 0px;
-  background-image: url(images/lock_gray.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.crown0_2_79_8560 {
-  width: 87px;
-  height: 21px;
-  position: absolute;
-  left: 0px;
-  top: 71px;
-  background-image: url(images/crown0_2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .stage4_79_8564 {
   width: 87px;
   height: 92px;
   position: absolute;
   left: 650px;
   top: 231px;
-}
-.lock_gray_1_79_8565 {
-  width: 70px;
-  height: 65px;
-  position: absolute;
-  left: 8px;
-  top: 0px;
-  background-image: url(images/lock_gray.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.crown0_2_79_8566 {
-  width: 87px;
-  height: 21px;
-  position: absolute;
-  left: 0px;
-  top: 71px;
-  background-image: url(images/crown0_2.png);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .start_79_8518 {
   width: 98px;
@@ -242,63 +163,22 @@
   position: absolute;
   left: 0px;
   top: 0px;
-  background-image: url(images/start_1.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .stage3_79_8520 {
   width: 87px;
-  height: 93px;
+  height: 94px;
   position: absolute;
   left: 323px;
   top: 10px;
 }
-.story_2_79_8522 {
-  width: 70px;
-  height: 65px;
-  position: absolute;
-  left: 9px;
-  top: 0px;
-  background-image: url(images/story_1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.crown2_1_79_8523 {
-  width: 87px;
-  height: 20px;
-  position: absolute;
-  left: 0px;
-  top: 73px;
-  background-image: url(images/crown2_1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .stage2_79_8524 {
   width: 87px;
-  height: 92px;
+  height: 94px;
   position: absolute;
   left: 162px;
   top: 12px;
-}
-.story_1_79_8545 {
-  width: 70px;
-  height: 65px;
-  position: absolute;
-  left: 9px;
-  top: 0px;
-  background-image: url(images/story_1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.crown1_1_79_8527 {
-  width: 87px;
-  height: 20px;
-  position: absolute;
-  left: 0px;
-  top: 72px;
-  background-image: url(images/crown1_1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .stage1_79_8536 {
   width: 87px;
@@ -313,7 +193,6 @@
   position: absolute;
   left: 9px;
   top: 0px;
-  background-image: url(images/story_1.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -323,7 +202,6 @@
   position: absolute;
   left: 0px;
   top: 74px;
-  background-image: url(images/crown3.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
