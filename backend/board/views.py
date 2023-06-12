@@ -81,7 +81,7 @@ def practice_start(request, id, hint_id=1):
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
                                 print("Correct1!!!!")
-                                return render(request, 'practice.html')
+                                return redirect("")
                             else :
                                 print("Wrong!!!!")
                         else:
@@ -195,6 +195,30 @@ def real_start(request, id):
 
     return render(request, 'real_mode_start.html',{'user':user,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
 
+
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+@csrf_exempt
+def use_hint(request):
+
+    prob_id = request.POST.get("prob_id")
+    user_id = request.POST.get("user_id")
+    hint_id = request.POST.get("hint_id")
+
+    prob = Problems.objects.get(problem_id=prob_id)
+    user = User.objects.get(id=user_id)
+    userprob= UserProblem.objects.get(user=user,problem=prob)
+
+
+
+    if hint_id == '1':
+        userprob.hint += 1
+    elif hint_id == '2':
+        userprob.hint += 1000
+    else:
+        userprob.hint += 1000000
+    userprob.save()
+    return JsonResponse({})
 
 def review(request):
     user=None

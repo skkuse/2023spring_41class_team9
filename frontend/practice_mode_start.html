@@ -11,24 +11,11 @@
     <link rel="stylesheet" href="/static/basic.css">
     <title>Practice</title>
     <link rel="import" href="testContents.html">
-    <script>
-        function showHint(hintMessage, id) {
 
-        // 팝업 창 생성
-        var hint = hintMessage;
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 
-        
-        alert(hint_msg);
-        
-        //if (confirmMessage) {
-            // 확인 버튼을 클릭한 경우
-          //  alert(hintMessage);
-            // 추가로 필요한 작업 수행
-        //}
-
-        }
-    </script>
 </head>
 
 <body>
@@ -60,14 +47,14 @@
     
     <div class="answer_area">
         <div class="answer_area_top">
-            <div class="prob_number">문제 N</div>
+            <div class="prob_number">문제 {{ problem.problem_id }}</div>
         <div class="hint_n_time">
             <div class="hint_area">
 
 
-                <div class="hint" onclick="{% hint user problem.problem_id hint1 'hint1' 1 %}" id="hint1"></div>
-                <button class="hint" onclick="{% hint user problem.problem_id hint2 'hint2' 2 %}" ></button>
-                <button class="hint" onclick="{% hint user problem.problem_id hint3 'hint3' 3 %}" ></button>
+                <button class="hint" onclick="showHint(1,  {{ user.id }}, {{ problem.problem_id }})" id="hint1"></button>
+                <button class="hint" onclick="showHint(2, {{ user.id }}, {{ problem.problem_id }})" ></button>
+                <button class="hint" onclick="showHint(3, {{ user.id }}, {{ problem.problem_id }})" ></button>
 
 
             </div>
@@ -118,5 +105,46 @@
   }
 }
 countdown();
+
+
+    function showHint(hint_id, user_id, prob_id, ) {
+
+        var msg = hint_id + "번 힌트를 사용합니다.";
+        var user_id = user_id;
+
+        var form_data = new FormData();
+        form_data.append("user_id",user_id);
+        form_data.append("prob_id",prob_id);
+        form_data.append("hint_id",hint_id);
+        console.log(form_data);
+        $.ajax({
+                type: "POST",
+                url: "{% url 'hint-use' %}",
+                data: form_data,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+            success:function(json){
+                console.log("hint is used");
+            },
+            error: function(xhr,errmsg,err){
+                console.log(".");
+            }
+
+        });
+
+        alert(msg);
+
+        //if (confirmMessage) {
+            // 확인 버튼을 클릭한 경우
+          //  alert(hintMessage);
+            // 추가로 필요한 작업 수행
+        //}
+
+        }
+
+
+
+
 </script>
 </html>

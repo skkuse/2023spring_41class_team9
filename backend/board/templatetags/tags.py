@@ -77,21 +77,3 @@ def btn_alert(user, p_id):
         strurl = reverse('problem-view', args=[p_id])
 
         return mark_safe("location.href='%s'"%strurl)
-
-
-@register.simple_tag
-def hint(user, p_id, p1, p2, hint_num):
-
-    problem = Problems.objects.get(problem_id=p_id)
-    userprob = UserProblem.objects.get(user=user, problem=problem)
-    print("!!!!!!!!!!!!!!!!!!")
-    print(hint_num)
-    if hint_num == 1:
-        userprob.hint += 1
-    elif hint_num == 2:
-        userprob.hint += 1000
-    else:
-        userprob.hint += 1000000
-
-    userprob.save()
-    return mark_safe("showHint('%s',"%p1+"'"+p2+"'" +")")
