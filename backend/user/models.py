@@ -23,9 +23,9 @@ class User(models.Model):
 class UserProblem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     problem = models.ForeignKey(Problems, on_delete=models.CASCADE)
-
     hint = models.IntegerField(default=0)
     solved = models.IntegerField(default=0)
     started = models.IntegerField(default=0)
+
     class Meta:
         db_table = 'user_problems'

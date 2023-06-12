@@ -107,9 +107,9 @@ def practice_start(request, id):
         problem_input = problem.problem_input
         problem_output = problem.problem_output
         prompt = f"문제는 다음과 같다.\n{problem_content}\n문제의 입력에 관한 설명은 다음과 같다.\n{problem_input}\n문제의 출력에 관한 설명은 다음과 같다.\n{problem_output}"
-        prompt_hint_1 = "해당 문제를 해결하기 위한 간단한 힌트를 줘."
-        prompt_hint_2 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 문제를 해결하기 위한 다음단계에 관한 간단한 힌트를 줘."
-        prompt_hint_3 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 코드를 보고 틀린 부분에 대한 간단한 힌트를 줘."
+        prompt_hint_1 = "해당 문제를 해결하기 위한 글로된 30자 이내의 간단한 힌트를 줘."
+        prompt_hint_2 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 문제를 해결하기 위한 다음단계에 관한 글로된 30자 이내의 간단한 힌트를 줘."
+        prompt_hint_3 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 코드를 보고 틀린 부분에 대한 글로된 30자 이내의 간단한 힌트를 줘."
         #prompt_hint_4 = "해당 문제를 보고 python을 사용해 정말 간단한 skeleton code를 짜줘."
         contents=[]
         contents.append(prompt + prompt_hint_1)
@@ -143,7 +143,7 @@ def practice_start(request, id):
                 print(hint[i])
                 cnt = cnt + 1
                 if cnt == 3:
-                    return render(request, 'practice_mode_start.html',{'user':user,'problem':problem,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3, 'hint1': hint[0],'hint2': hint[1], 'hint3': hint[2]})
+                    return render(request, 'practice_mode_start.html',{'user':user,'problem':problem,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3, 'hint1': hint[0],'hint2': hint[1], 'hint3': hint[2], 'user_answer':user_answer})
             else:
                 return HttpResponse('An error occurred')
         
@@ -159,9 +159,8 @@ def real_start(request, id):
     else:
         return redirect('/user/login/')
 
-
+    user_answer = ''
     if request.method == 'POST':
-        
         user_answer = request.POST.get('user_answer', '')  # 폼 요소의 name 속성 값을 사용하여 데이터 불러오기
         with open('a.py', 'w') as file:
             file.write(user_answer)
@@ -206,7 +205,7 @@ def real_start(request, id):
             else:
                 print("Wrong!!!!")
 
-    return render(request, 'real_mode_start.html',{'user':user,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
+    return render(request, 'real_mode_start.html',{'user':user,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3, 'user_answer':user_answer})
 
 
 from django.http import JsonResponse
