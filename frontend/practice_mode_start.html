@@ -1,3 +1,4 @@
+{% load tags %}
 
 
 <!DOCTYPE html>
@@ -13,27 +14,27 @@
     <script>
         function showHint(hintMessage, id) {
         // 팝업 창 생성
-        var hint = hintMessage; 
+        var hint = hintMessage;
         if (id == 'hint1'){
-            hint_msg = "문제 정보에 관한 힌트를 쓰시겠습니까?";
+            hint_msg = "문제 정보에 관한 힌트입니다.\n힌트횟수가 차감됩니다.";
         }
         else if(id == 'hint2'){
-            hint_msg = "다음 단계에 관한 힌트를 쓰시겠습니까?";
+            hint_msg = "다음 단계에 관한 힌트입니다.\n힌트횟수가 차감됩니다.";
         }
         else if(id == 'hint3'){
-            hint_msg = "틀린부분에 대한한 힌트를 쓰시겠습니까?";
+            hint_msg = "틀린부분에 대한 힌트입니다. \n 힌트횟수가 차감됩니다.";
         }
         // else if(id == 'hint4'){
         //     hint_msg = "skeleton에 관한 힌트를 쓰시겠습니까?";
         // }
         
-        var confirmMessage = confirm(hint_msg); 
+        alert(hint_msg);
         
-        if (confirmMessage) {
+        //if (confirmMessage) {
             // 확인 버튼을 클릭한 경우
-            alert(hintMessage);
+          //  alert(hintMessage);
             // 추가로 필요한 작업 수행
-        } 
+        //}
         }
     </script>
 </head>
@@ -68,9 +69,9 @@
         <div class="hint_n_time">
             <div class="hint_area">
 
-                <button class="hint" onclick="showHint('{{hint1}}', 'hint1')" id="hint1"></button>
-                <button class="hint" onclick="showHint('{{hint2}}', 'hint2')" ></button>
-                <button class="hint" onclick="showHint('{{hint3}}', 'hint3')" ></button>
+                <div class="hint" onclick="{% hint user problem.problem_id hint1 'hint1' 1 %}" id="hint1"></div>
+                <button class="hint" onclick="{% hint user problem.problem_id hint2 'hint2' 2 %}" ></button>
+                <button class="hint" onclick="{% hint user problem.problem_id hint3 'hint3' 3 %}" ></button>
 
 
             </div>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Problems
-from user.models import User
+from user.models import User, UserProblem
 import random
 import subprocess
 import os
@@ -14,8 +14,14 @@ def practice(request):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-    problems = Problems.objects.all()[:10]
-    context = {'user':user, 'problems':problems}
+    problems = Problems.objects.all()
+
+    for problem in problems:
+        if UserProblem.objects.filter(user=user, problem=problem).count() == 0:
+            UserProblem.objects.create(user=user,problem=problem)
+
+
+    context = {'user':user}
     return render(request, 'practice.html', context)
 
 def real(request):
@@ -29,12 +35,15 @@ def real(request):
 
 def practice_start(request, id, hint_id=1):
     problem = Problems.objects.get(problem_id=id)
+
     context = {}
     user = None
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-
+    userprob = UserProblem.objects.get(problem=problem, user=user)
+    userprob.started = 1
+    userprob.save()
 
     if request.method == 'POST':      
         user_answer = request.POST.get('user_answer', '')  # 폼 요소의 name 속성 값을 사용하여 데이터 불러오기
@@ -115,11 +124,11 @@ def practice_start(request, id, hint_id=1):
                 print(hint[i])
                 cnt = cnt + 1
                 if cnt == 3:
-                    return render(request, 'practice_mode_start.html',{'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3, 'hint1': hint[0],'hint2': hint[1], 'hint3': hint[2]})
+                    return render(request, 'practice_mode_start.html',{'user':user,'problem':problem,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3, 'hint1': hint[0],'hint2': hint[1], 'hint3': hint[2]})
             else:
                 return HttpResponse('An error occurred')
         
-    return render(request, 'practice_mode_start.html',{'user':user,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
+    return render(request, 'practice_mode_start.html',{'user':user,'problem':problem,'problem_title':problem.problem_title, 'problem_content':problem.problem, 'problem_input':problem.problem_input, 'problem_output':problem.problem_output, 'io_example1':problem.test_1, 'io_ex_answer1':problem.test_ans_1, 'io_example2':problem.test_2, 'io_ex_answer2':problem.test_ans_2, 'io_example3':problem.test_3, 'io_ex_answer3':problem.test_ans_3})
 
 
 def real_start(request, id):
