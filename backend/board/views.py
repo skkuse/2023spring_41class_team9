@@ -81,17 +81,23 @@ def practice_start(request, id, hint_id=1):
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
                                 print("Correct1!!!!")
-                                return redirect("")
+                                userprob.solved = 1
+                                userprob.save()
+                                return redirect("/board/practice")
                             else :
                                 print("Wrong!!!!")
                         else:
                             print("Correct2!!!!")
-                            return render(request, 'practice.html')
+                            userprob.solved = 1
+                            userprob.save()
+                            return redirect("/board/practice")
                     else:
                         print("Wrong!!!!")
                 else :
                     print("Correct3!!!!")
-                    return render(request, 'practice.html')
+                    userprob.solved = 1
+                    userprob.save()
+                    return redirect("/board/practice")
             else:
                 print("Wrong!!!!")
 
@@ -123,7 +129,7 @@ def practice_start(request, id, hint_id=1):
 
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'api key'
+            'Authorization': 'Bearer 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'
         }
 
         hint = []
@@ -179,16 +185,22 @@ def real_start(request, id):
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
                                 print("Correct1!!!!")
+                                user.score = user.score + 100
+                                user.save()
                                 return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
                             else :
                                 print("Wrong!!!!")
                         else:
                             print("Correct2!!!!")
+                            user.score = user.score + 100
+                            user.save()
                             return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
                     else:
                         print("Wrong!!!!")
                 else :
                     print("Correct3!!!!")
+                    user.score = user.score + 100
+                    user.save()
                     return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
             else:
                 print("Wrong!!!!")
