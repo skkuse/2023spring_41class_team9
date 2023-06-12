@@ -129,7 +129,7 @@ def practice_start(request, id, hint_id=1):
 
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': 'api key'
         }
 
         hint = []
