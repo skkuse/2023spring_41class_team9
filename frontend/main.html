@@ -1,172 +1,65 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Html Generated</title>
-        <meta name="description" content="Figma htmlGenerator">
-        <meta name="author" content="htmlGenerator">
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+        <title>Main Page</title>
+        <meta name="description" content="Main Page">
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/static/main_styles.css">
     </head>
     <body>
-        <div class=main_sb_17_282>
-            <div class=welcome_17_283>
-                <span class="welcome_text_17_284">다시오신것을 환영해요 {{user.username}}님!</span>
-                <div class="welcome_icon_27_148"></div>
+        <div class=main_sb>
+            <div class=welcome>
+                <span class="welcome_text">다시오신것을 환영해요 {{user.username}}님!</span>
+                <div class="welcome_icon"></div>
             </div>
-            <div class=score_id_27_149>
-                <div class=id_27_104>
-                    <div class=id_text_27_108>
-                        <span class="bugjava_17_411">{{user.username}}</span>
+            {% include "includes/logo.html" %}
+
+            <div class="leftbar">
+                <div class="ranking">
+                  {% include "includes/ranking.html" %}
+                  <div class="my_frame">
+                    <div class="mypage">
+                      <a href="/user/logout">
+                        <div class="logout_icon"></div>
+                        <span class="logout_text">로그아웃</span>
+                      </a>
                     </div>
-                    <div class="id_icon_75_2063"></div>
-                </div>
-                <div class=score_27_103>
-                    <div class=id_text_27_108>
-                        <span class="bugjava_17_412">{{ user.score }}</span>
+        
+                    <div class="review_note">
+                      <a href="/board/review">
+                        <div class="note_icon"></div>
+                        <span class="note_text">오답노트</span>
+                      </a>
                     </div>
-                    <div class=score_icon_82_269></div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class=leftbar_27_140>
-                <div class=ranking_17_293>
-                    <div class=ranking_frame_32_502>
-                        <div class=ann_17_380>
-                            <div class=friends_17_381>
-                                <div class=learderboard_selection_32_1659>
-                                    <div class="rectangle_30_i32_1659_74_99"></div>
-                                </div>
-                                <div class=inativo_25_189>
-                                    <span class="1__forawhile_17_384">1위 forAwhile</span>
-                                </div>
-                                <div class=number_25_188>
-                                    <span class="1_764_17_385">1,764</span>
-                                </div>
-                                <div class="mask_group_1_75_613"></div>
-                            </div>
-                        </div>
-                        <div class=corey_17_363>
-                            <div class=friends_17_364>
-                                <div class=learderboard_selection_17_365>
-                                    <div class="rectangle_30_i17_365_74_99"></div>
-                                </div>
-                                <div class=inativo_17_366>
-                                    <span class="2__cookies_17_367">2위 Cookies</span>
-                                </div>
-                                <div class=number_25_187>
-                                    <span class="1_256_17_368">1,256</span>
-                                </div>
-                                <div class="mask_group_2_75_921"></div>
-                            </div>
-                        </div>
-                        <div class=giana_17_345>
-                            <div class=friends_17_346>
-                                <div class=learderboard_selection_17_347>
-                                    <div class="rectangle_30_i17_347_74_99"></div>
-                                </div>
-                                <div class=inativo_17_348>
-                                    <span class="3__helloworld_17_349">3위 HelloWorld</span>
-                                </div>
-                                <div class=number_25_186>
-                                    <span class="1_142_17_362">1,142</span>
-                                </div>
-                                <div class="mask_group_3_75_1060"></div>
-                            </div>
-                        </div>
-                        <div class=zaire3_17_295>
-                            <div class=friends_17_296>
-                                <div class=learderboard_selection_17_297>
-                                    <div class="rectangle_30_i17_297_74_99"></div>
-                                </div>
-                                <div class=inativo_25_171>
-                                    <span class="26__runtimeterror_25_170">26위 RuntimeTerror</span>
-                                </div>
-                                <div class=number_25_173>
-                                    <span class="272_25_168">272</span>
-                                </div>
-                                <div class="mask_group_4_75_1151"></div>
-                            </div>
-                        </div>
-                        <div class=zaire2_17_312>
-                            <div class="rectangle_147_17_313"></div>
-                            <div class=friends_17_314>
-                                <div class=learderboard_selection_17_315>
-                                    <div class="rectangle_30_i17_315_74_99"></div>
-                                </div>
-                                <div class=inativo_17_316>
-                                    <span class="27__bugjava_17_317">27위 BugJava</span>
-                                </div>
-                                <div class=number_25_174>
-                                    <span class="263_17_328">263</span>
-                                </div>
-                                <div class="mask_group_5_75_1398"></div>
-                            </div>
-                        </div>
-                        <div class=zaire1_17_329>
-                            <div class=friends_17_330>
-                                <div class=learderboard_selection_17_331>
-                                    <div class="rectangle_30_i17_331_74_99"></div>
-                                </div>
-                                <div class=inativo_17_332>
-                                    <span class="28__404error_17_333">28위 404error</span>
-                                </div>
-                                <div class=number_25_175>
-                                    <span class="230_17_344">230</span>
-                                </div>
-                                <div class="mask_group_6_75_1510"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=ranking_title_25_156>
-                        <span class="ranking_text_17_397">Ranking</span>
-                        <div class="trophy_17_398"></div>
-                    </div>
-                    <div class=frame_299_79_10928>
-                        <div class=mypage_79_9976>
-                            <div class="mypage_icon_79_9682"></div>
-                            <span class="mypate_text_79_9980">마이페이지</span>
-                        </div>
-
-                        <div class=review_note_79_9514>
-                            <a href="board/review">
-                                <div class="note_icon_79_9675"></div>
-                                <span class="note_text_79_9522">오답노트</span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-                <div>
-                    <a href="/">
-                        <span class="code_craft_17_292">Code Craft</span>
-                    </a>
-                </div>
-
-            </div>
-            <div class=practicemode_27_134>
+            
+            <div class=pracmode_group>
               <a href="board/practice">
-                <div class=pracmode_27_121>
-                    <div class=prac_button_27_135>
-                        <span class="prac_button_label_27_123">Stage1 문제 4</span>
+                <div class=pracmode>
+                    <div class=prac_button>
+                        <span class="prac_button_label">Stage1 문제 4</span>
                     </div>
-                    <span class="prac_body_27_124">3개의 스테이지로 구성된
+                    <span class="prac_body">3개의 스테이지로 구성된
 난이도 순의 코딩 문제를 
 5개의 유형별 힌트를 
 이용하여 풀어나갑니다</span>
-                    <span class="prac_title_27_125">연습모드</span>
+                    <span class="prac_title">연습모드</span>
                     </div>
               </a>
             </div>
         </div>
-        <div class=realmode_27_137>
+        <div class=realmode_group>
           <a href="board/real">
-            <div class=realmode_27_128>
-                <div class=real_button_27_136>
-                    <span class="real_button_label_27_130">Ranking 27</span>
+            <div class=realmode>
+                <div class=real_button>
+                    <span class="real_button_label">Ranking 27</span>
                 </div>
-                <span class="real_text_27_131">힌트가 제공되지 않는 실전프로그래밍 문제가 제공됩니다. 제한시간이 주어지며 랭킹에 반영되는 점수를 획득할 수 
+                <span class="real_text">힌트가 제공되지 않는 실전프로그래밍 문제가 제공됩니다. 제한시간이 주어지며 랭킹에 반영되는 점수를 획득할 수 
 있습니다.</span>
-                <span class="real_title_27_132">실전모드</span>
+                <span class="real_title">실전모드</span>
             </div>
           </a>
         </div>

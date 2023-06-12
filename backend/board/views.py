@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Problems
 from user.models import User, UserProblem
@@ -14,14 +14,18 @@ def practice(request):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
+
+
     problems = Problems.objects.all()
 
     for problem in problems:
         if UserProblem.objects.filter(user=user, problem=problem).count() == 0:
-            UserProblem.objects.create(user=user,problem=problem)
+            UserProblem.objects.create(user=user, problem=problem)
+    problems = Problems.objects.all()[:10]
+    context = {'user':user, 'problems':problems}
 
-
-    context = {'user':user}
     return render(request, 'practice.html', context)
 
 def real(request):
@@ -30,6 +34,8 @@ def real(request):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
 
     return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
 
@@ -41,6 +47,11 @@ def practice_start(request, id, hint_id=1):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+
+    else:
+        return redirect('/user/login/')
+
+
     userprob = UserProblem.objects.get(problem=problem, user=user)
     userprob.started = 1
     userprob.save()
@@ -69,21 +80,22 @@ def practice_start(request, id, hint_id=1):
                             correct3 = subprocess.run(['python', path], input=test_3, capture_output=True, text=True)
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
-                                print("Correct!!!!")
+                                print("Correct1!!!!")
+                                return render(request, 'practice.html')
                             else :
                                 print("Wrong!!!!")
                         else:
-                            print("Correct!!!!")
+                            print("Correct2!!!!")
+                            return render(request, 'practice.html')
                     else:
                         print("Wrong!!!!")
                 else :
-                    print("Correct!!!!")
+                    print("Correct3!!!!")
+                    return render(request, 'practice.html')
             else:
                 print("Wrong!!!!")
 
-
         user_code = user_answer
-        print(user_code)
         problem_content = problem.problem
         problem_input = problem.problem_input
         problem_output = problem.problem_output
@@ -111,7 +123,7 @@ def practice_start(request, id, hint_id=1):
                 
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'codecraft'
+            'Authorization': 'API입력'
         }
 
         hint = []
@@ -137,6 +149,8 @@ def real_start(request, id):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
 
 
     if request.method == 'POST':
@@ -164,15 +178,18 @@ def real_start(request, id):
                             correct3 = subprocess.run(['python', path], input=test_3, capture_output=True, text=True)
                             correct3 = correct3.stdout[:-1]
                             if(str(correct3) == test_ans_3):
-                                print("Correct!!!!")
+                                print("Correct1!!!!")
+                                return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
                             else :
                                 print("Wrong!!!!")
                         else:
-                            print("Correct!!!!")
+                            print("Correct2!!!!")
+                            return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
                     else:
                         print("Wrong!!!!")
                 else :
-                    print("Correct!!!!")
+                    print("Correct3!!!!")
+                    return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
             else:
                 print("Wrong!!!!")
 
@@ -184,6 +201,21 @@ def review(request):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
     return render(request, 'review.html',{"user":user})
 
+
+def review_mode(request):
+    context = {}
+    user = None
+    if 'user' in request.session:
+        user_id = request.session['user']
+        user = User.objects.get(id=user_id)
+    else:
+        return redirect('/user/login/')
+    problems_content = Problems.objects.all()[:10]
+    problem_title = Problems.objects.all()[:10]
+    context = {'user_name':user, 'problem_title':problem_title[0],'problem_content':problems_content[0]}
+    return render(request, 'review_mode.html', context)
 

@@ -9,15 +9,19 @@
     <link rel="import" href="testContents.html" />
   </head>
 
-  <body>
+  <body onload="timer()"> 
+    
 {% include 'includes/logo.html' %}
 
     <div class="problem_area">
       <div class="problem_title"> {{problem_title}}</div>
       <div class="provlem_content">{{problem_content}}</div>
+      <div class =io_example_area>
       <div class="provlem_input">{{problem_input}}</div>
+      <br>
       <div class="provlem_output">{{problem_output}}</div>
       <!--<div class="io_example">{{io_example1}}{{io_example2}}{{io_example3}}{{io_ex_answer1}}{{io_ex_answer2}}{{io_ex_answer3}}</div>-->
+      <br>
       <div class="io_example">
           {% if io_example1 %}{{ io_example1 | linebreaksbr}}<br><br>{% endif %}
           {% if io_example2 %}{{ io_example2 | linebreaksbr }}<br><br>{% endif %}
@@ -26,6 +30,7 @@
           {% if io_ex_answer2 %}{{ io_ex_answer2 | linebreaksbr }}<br><br>{% endif %}
           {% if io_ex_answer3 %}{{ io_ex_answer3 | linebreaksbr }}<br><br>{% endif %}
         </div>
+      </div>
   </div>
     <div class="midline"></div>
 
@@ -51,15 +56,16 @@
             <div class="time_area">
             <div class="time_word">남은시간</div>
             <div class="time_icon"></div>
-            <div class="time" id="Timer">10:00</div>
+            <div class="time" id="Timer">05:00</div>
           </div>
         </div>
 
 
       </div>
       <form method="POST">
-        {% csrf_token %}
+          {% csrf_token %}
       <div class="put_answer">
+        
         <textarea
           type="text"
           class="user_answer"
@@ -67,57 +73,73 @@
           placeholder="정답을 입력하세요"
           id="user_answer"
         ></textarea>
-
-        <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')">
+        
+        <button type = "submit" class="submit_btn_user" onclick="alert('제출하시겠습니까?')">
           제출
         </button>
         <div class="submit_icon"></div>
+      
       </div>
-    </form>
+     </form>
     </div>
 
-    <div class="footer">
+    <!-- <div class="footer">
       <button class="home_icon"></button>
       <div class="to_home">메인으로</div>
       <button class="question_icon"></button>
       <div class="question">도움말</div>
-    </div>
+    </div> -->
   </body>
 
-  <!-- <script>
-  
-  
-  const Timer=document.getElementById('Timer'); //스코어 기록창-분
-    let time= 180000;
-    let min=3;
-    let sec=60;
-    
-    
-    Timer.value=min+":"+'00'; 
-    
-    function TIMER(){
-        PlAYTIME=setInterval(function(){
-            time=time-1000; //1초씩 줄어듦
-            min=time/(60*1000); //초를 분으로 나눠준다.
-    
-           if(sec>0){ //sec=60 에서 1씩 빼서 출력해준다.
-                sec=sec-1;
-                Timer.value=Math.floor(min)+':'+sec; //실수로 계산되기 때문에 소숫점 아래를 버리고 출력해준다.
-               
-            }
-            if(sec===0){
-               // 0에서 -1을 하면 -59가 출력된다.
-                // 그래서 0이 되면 바로 sec을 60으로 돌려주고 value에는 0을 출력하도록 해준다.
-                sec=60;
-                Timer.value=Math.floor(min)+':'+'00'
-            }     
-       
-        },1000); //1초마다 
+
+
+<script>
+ 
+function timer() {
+  var elem = document.getElementById("myBar");
+  var width = 100;
+  var duration = 5 * 60; // 7 minutes in seconds
+  var increment = 100 / duration; 
+  var currentTime = 0;
+  var id = setInterval(frame, 1000); // Update the progress bar every second
+
+  function frame() {
+    if (currentTime >= duration) {
+      clearInterval(id);
+    } else {
+      currentTime++;
+      width -= increment;
+      elem.style.width = width + "%";
+      // elem.innerHTML = Math.round(width) + "%";
     }
-    
-    
-    TIMER();
-    setTimeout(function(){
-        clearInterval(PlAYTIME);
-    },180000);//3분이 되면 타이머를 삭제한다.</script> -->
+  }
+}
+
+
+function countdown() {
+  var timerElement = document.getElementById("Timer");
+  var remainingTime = 5 * 60; // 5 minutes in seconds
+
+  var timerId = setInterval(updateTimer, 1000);
+
+  function updateTimer() {
+    var minutes = Math.floor(remainingTime / 60);
+    var seconds = remainingTime % 60;
+
+    var timeText = minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
+    timerElement.innerHTML = timeText;
+
+    if (remainingTime <= 0) {
+      clearInterval(timerId);
+
+    } else {
+      remainingTime--;
+    }
+  }
+}
+
+countdown();
+
+</script>
+
 </html>

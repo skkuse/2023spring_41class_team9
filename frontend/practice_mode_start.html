@@ -13,20 +13,11 @@
     <link rel="import" href="testContents.html">
     <script>
         function showHint(hintMessage, id) {
+
         // 팝업 창 생성
         var hint = hintMessage;
-        if (id == 'hint1'){
-            hint_msg = "문제 정보에 관한 힌트입니다.\n힌트횟수가 차감됩니다.";
-        }
-        else if(id == 'hint2'){
-            hint_msg = "다음 단계에 관한 힌트입니다.\n힌트횟수가 차감됩니다.";
-        }
-        else if(id == 'hint3'){
-            hint_msg = "틀린부분에 대한 힌트입니다. \n 힌트횟수가 차감됩니다.";
-        }
-        // else if(id == 'hint4'){
-        //     hint_msg = "skeleton에 관한 힌트를 쓰시겠습니까?";
-        // }
+
+
         
         alert(hint_msg);
         
@@ -35,6 +26,7 @@
           //  alert(hintMessage);
             // 추가로 필요한 작업 수행
         //}
+
         }
     </script>
 </head>
@@ -47,18 +39,21 @@
     <div class="problem_area">
         <div class="problem_title"> {{problem_title}}</div>
         <div class="provlem_content">{{problem_content}}</div>
-        <div class="provlem_input">{{problem_input}}</div>
-        <div class="provlem_output">{{problem_output}}</div>
-        <!--<div class="io_example">{{io_example1}}{{io_example2}}{{io_example3}}{{io_ex_answer1}}{{io_ex_answer2}}{{io_ex_answer3}}</div>-->
-        <br>
-        <div class="io_example">
-            {% if io_example1 %}{{ io_example1 | linebreaksbr}}<br><br>{% endif %}
-            {% if io_example2 %}{{ io_example2 | linebreaksbr }}<br><br>{% endif %}
-            {% if io_example3 %}{{ io_example3 | linebreaksbr }}<br><br>{% endif %}
-            {% if io_ex_answer1 %}{{ io_ex_answer1 | linebreaksbr }}<br><br>{% endif %}
-            {% if io_ex_answer2 %}{{ io_ex_answer2 | linebreaksbr }}<br><br>{% endif %}
-            {% if io_ex_answer3 %}{{ io_ex_answer3 | linebreaksbr }}<br><br>{% endif %}
-          </div>
+        <div class =io_example_area>
+            <div class="provlem_input">{{problem_input}}</div>
+            <br>
+            <div class="provlem_output">{{problem_output}}</div>
+            <!--<div class="io_example">{{io_example1}}{{io_example2}}{{io_example3}}{{io_ex_answer1}}{{io_ex_answer2}}{{io_ex_answer3}}</div>-->
+            <br>
+            <div class="io_example">
+                {% if io_example1 %}{{ io_example1 | linebreaksbr}}<br><br>{% endif %}
+                {% if io_example2 %}{{ io_example2 | linebreaksbr }}<br><br>{% endif %}
+                {% if io_example3 %}{{ io_example3 | linebreaksbr }}<br><br>{% endif %}
+                {% if io_ex_answer1 %}{{ io_ex_answer1 | linebreaksbr }}<br><br>{% endif %}
+                {% if io_ex_answer2 %}{{ io_ex_answer2 | linebreaksbr }}<br><br>{% endif %}
+                {% if io_ex_answer3 %}{{ io_ex_answer3 | linebreaksbr }}<br><br>{% endif %}
+              </div>
+            </div>
     </div>
 
     <div class="midline"></div>
@@ -69,6 +64,7 @@
         <div class="hint_n_time">
             <div class="hint_area">
 
+
                 <div class="hint" onclick="{% hint user problem.problem_id hint1 'hint1' 1 %}" id="hint1"></div>
                 <button class="hint" onclick="{% hint user problem.problem_id hint2 'hint2' 2 %}" ></button>
                 <button class="hint" onclick="{% hint user problem.problem_id hint3 'hint3' 3 %}" ></button>
@@ -77,42 +73,50 @@
             </div>
             <div class="time_area">
                 <div class ="time_icon"></div>
-                <div class ="time">1:27</div>
+                <div class ="time" id="Timer">03:00</div>
             </div>
 
 
         </div>
         </div>
-        
-        <div class="put_answer">
-            <form method="POST">
+        <form method="POST">
                 {% csrf_token %}
+        <div class="put_answer">
+            
             <textarea  type="text" class = "user_answer" name="user_answer" placeholder="정답을 입력하세요" id="user_answer"></textarea>
+            <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')">제출</button>
+            <div class="submit_icon" ></div>    
+            
         
-            <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')"
-            >제출</button>
-            <div class="submit_icon" ></div>
-        </form>
+        
         </div>
-    
-    <!-- <div class="put_answer">
-        <textarea  type="text" class = "user_answer" name="user_answer" placeholder="정답을 입력하세요" id="user_answer"></textarea>
-
-        <button class="submit_btn_user" onclick="alert('제출하시겠습니까?')"
-        >제출</button>
-        <div class="submit_icon" ></div>
-    
-    </div> -->
+    </form>
     </div>
-    <!--
-    <div class=footer>
-        
-        <button class="home_icon"></button>
-        <div class ="to_home">메인으로</div>  
-        <button class="question_icon"></button>
-        <div class ="question">도움말</div>  
-    </div> 
-       -->     
+   
 </body>
 
+<script>
+    function countdown() {
+  var timerElement = document.getElementById("Timer");
+  var remainingTime = 3 * 60; // 3 minutes in seconds
+
+  var timerId = setInterval(updateTimer, 1000);
+
+  function updateTimer() {
+    var minutes = Math.floor(remainingTime / 60);
+    var seconds = remainingTime % 60;
+
+    var timeText = minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
+    timerElement.innerHTML = timeText;
+
+    if (remainingTime <= 0) {
+      clearInterval(timerId);
+
+    } else {
+      remainingTime--;
+    }
+  }
+}
+countdown();
+</script>
 </html>

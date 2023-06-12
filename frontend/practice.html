@@ -1,6 +1,7 @@
 {% load tags %}
 
 <html lang="en">
+
     <head>
         <meta charset="utf-8">
         <title>Html Generated</title>
@@ -211,6 +212,31 @@
                     <div class=score_icon_i32_478_82_269></div>
                 </div>
             </div>
+
         </div>
-    </body>
+      </div>
+
+      {% include "includes/logo.html" %}
+      <div class="leftbar">
+        <div class="ranking">
+          {% include "includes/ranking.html" %}
+          <div class="my_frame">
+            <div class="mypage">
+              <a href="/user/logout">
+                <div class="logout_icon"></div>
+                <span class="logout_text">로그아웃</span>
+              </a>
+            </div>
+
+            <div class="review_note">
+              <a href="/board/review">
+                <div class="note_icon"></div>
+                <span class="note_text">오답노트</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
