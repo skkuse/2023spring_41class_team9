@@ -10,11 +10,11 @@ def home(request):
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
-        # username = user.username
-        return render(request, 'main.html', {'user': user})
+        users_ranking = User.objects.order_by('-score')[:5]
+
+        return render(request, 'main.html', {'user': user, 'users_ranking_0':users_ranking[0], 'users_ranking_1':users_ranking[1], 'users_ranking_2':users_ranking[2], 'users_ranking_3':users_ranking[3], 'users_ranking_4':users_ranking[4]})
     else:
         return redirect('/user/login/')
-    #return render(request, 'main.html')
 
 def login(request):
     if request.method == 'GET':

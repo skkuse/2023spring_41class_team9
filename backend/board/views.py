@@ -17,32 +17,33 @@ def practice(request):
     else:
         return redirect('/user/login/')
 
-
+    users_ranking = User.objects.order_by('-score')[:5]
     problems = Problems.objects.all()
 
     for problem in problems:
         if UserProblem.objects.filter(user=user, problem=problem).count() == 0:
             UserProblem.objects.create(user=user, problem=problem)
     problems = Problems.objects.all()[:10]
-    context = {'user':user, 'problems':problems}
+    context = {'user':user, 'problems':problems, 'users_ranking':users_ranking, 'users_ranking_0':users_ranking[0], 'users_ranking_1':users_ranking[1], 'users_ranking_2':users_ranking[2], 'users_ranking_3':users_ranking[3], 'users_ranking_4':users_ranking[4]}
 
     return render(request, 'practice.html', context)
 
 def real(request):
 
     user = None
+    users_ranking = User.objects.order_by('-score')[:5]
+
     if 'user' in request.session:
         user_id = request.session['user']
         user = User.objects.get(id=user_id)
     else:
         return redirect('/user/login/')
 
-    return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15)})
+    return render(request, 'real.html', {'user':user,'random_number':random.randint(11,15), 'users_ranking_0':users_ranking[0], 'users_ranking_1':users_ranking[1], 'users_ranking_2':users_ranking[2], 'users_ranking_3':users_ranking[3], 'users_ranking_4':users_ranking[4]})
 
-def practice_start(request, id, hint_id=1):
+def practice_start(request, id):
     problem = Problems.objects.get(problem_id=id)
 
-    context = {}
     user = None
     if 'user' in request.session:
         user_id = request.session['user']
@@ -106,9 +107,9 @@ def practice_start(request, id, hint_id=1):
         problem_input = problem.problem_input
         problem_output = problem.problem_output
         prompt = f"문제는 다음과 같다.\n{problem_content}\n문제의 입력에 관한 설명은 다음과 같다.\n{problem_input}\n문제의 출력에 관한 설명은 다음과 같다.\n{problem_output}"
-        prompt_hint_1 = "해당 문제를 해결하기 위한 20자 이내의 간단한 힌트를 줘."
-        prompt_hint_2 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 문제를 해결하기 위한 다음단계에 관한 20자 이내의 간단한 힌트를 줘."
-        prompt_hint_3 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 코드를 보고 틀린 부분에 대한 20자 이내의 간단한 힌트를 줘."
+        prompt_hint_1 = "해당 문제를 해결하기 위한 간단한 힌트를 줘."
+        prompt_hint_2 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 문제를 해결하기 위한 다음단계에 관한 간단한 힌트를 줘."
+        prompt_hint_3 = f"현재까지 작성한 code는 다음과 같다.\n{user_code}\n이 코드를 보고 틀린 부분에 대한 간단한 힌트를 줘."
         #prompt_hint_4 = "해당 문제를 보고 python을 사용해 정말 간단한 skeleton code를 짜줘."
         contents=[]
         contents.append(prompt + prompt_hint_1)
@@ -254,4 +255,3 @@ def review_mode(request):
     problem_title = Problems.objects.all()[:10]
     context = {'user_name':user, 'problem_title':problem_title[0],'problem_content':problems_content[0]}
     return render(request, 'review_mode.html', context)
-

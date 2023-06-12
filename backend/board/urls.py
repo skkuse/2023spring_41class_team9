@@ -11,5 +11,5 @@ urlpatterns = [
     path('review/', views.review, name='review'),
     path('review_mode/', views.review_mode),
     path('hint/', views.use_hint, name='hint-use'),
-    
+
 ]
