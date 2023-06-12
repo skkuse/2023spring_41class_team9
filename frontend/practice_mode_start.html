@@ -79,28 +79,23 @@
 </body>
 
 <script>
-    function countdown() {
+    function countup() {
   var timerElement = document.getElementById("Timer");
-  var remainingTime = 3 * 60; // 3 minutes in seconds
+  var elapsedTime = 0;
 
   var timerId = setInterval(updateTimer, 1000);
 
   function updateTimer() {
-    var minutes = Math.floor(remainingTime / 60);
-    var seconds = remainingTime % 60;
+    var minutes = Math.floor(elapsedTime / 60);
+    var seconds = elapsedTime % 60;
 
     var timeText = minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
     timerElement.innerHTML = timeText;
 
-    if (remainingTime <= 0) {
-      clearInterval(timerId);
-
-    } else {
-      remainingTime--;
-    }
+    elapsedTime++;
   }
 }
-countdown();
+countup();
 
 
     function showHint(hint_id, user_id, prob_id, msg) {
