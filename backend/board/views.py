@@ -120,10 +120,10 @@ def practice_start(request, id, hint_id=1):
                 'model': 'gpt-3.5-turbo',
                 'max_tokens': 1000
             }
-                
+
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': 'API입력'
+            'Authorization': 'api key'
         }
 
         hint = []
