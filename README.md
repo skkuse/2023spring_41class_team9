@@ -8,7 +8,7 @@ We provide a web service to users who want to develop their problem-solving skil
 - Incorrect answer notes that allow users to review their own solutions as well as the solutions provided by GPT-3
 
 ### Usage
-```
+```sh
 # clone this repository first
 python ./backend/manage.py runserver
 ```
