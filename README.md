@@ -61,4 +61,17 @@ The Real Mode is a format where problems need to be solved within a limited time
 
 ## Review Note
 ### Review Note Page
+- The review notes allow for learning from the problems that were not solved in the real mode. You can review your own code, other users' code, and AI-generated code.
+- A list of incorrect problems is displayed.
+<p align="center"><img src="./examples/review.png"></p>
 
+### Review Note
+- Problem
+  - problem content
+  - description of inputs
+  - description of outputs
+- Provided Contents
+  - The User's code
+  - Other Users' code
+  - GPT generated code
+<p align="center"><img src="./examples/review_note.png"></p>
