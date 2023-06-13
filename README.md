@@ -46,7 +46,7 @@ We provide a web service to users who want to develop their problem-solving skil
 
 ## Real Mode
 ### Real Mode Page
-The Real Mode is a format where problems need to be solved within a limited time, and points are earned upon successful completion. In case of incorrect answers, it is possible to review and learn again on the [Review Note](##review-note) page. Clicking the "Start" button provides random problem prompts.
+The Real Mode is a format where problems need to be solved within a limited time, and points are earned upon successful completion. In case of incorrect answers, it is possible to review and learn again on the [Review Note](#review-note) page. Clicking the "Start" button provides random problem prompts.
 <p align="center"><img src="./examples/real.png"></p>
 
 ### Real Mode
