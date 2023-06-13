@@ -10,3 +10,11 @@ We provide a web service to users who want to develop their problem-solving skil
 ## Login
 ### Login page
 <p align="center"><img src="./examples/login.png"></p>
+### Register Page
+<p align="center"><img src="./examples/register.png"></p>
+
+## Main Page
+- User ranking: Users can check the ranking based on the scores obtained through the real mode.
+- User name and User score are displayed.
+- Provides two modes: practice mode and real mode.
+<p align="center"><img src="./examples/main.png"></p>
