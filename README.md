@@ -101,3 +101,13 @@ The Real Mode is a format where problems need to be solved within a limited time
   - Other Users' code
   - GPT generated code
 <p align="center"><img src="./examples/review_note.png"></p>
+
+## Collaborators
+
+|Name|                    GitHub ID                    |        Role        |
+|:---:|:-----------------------------------------------:|:------------------:|
+|박주봉 (Jubong Park)|     [Park-Jubong](https://github.com/Park-Jubong)     | Backend Developer  |
+|김민성 (MinseongKim)|         [minseong0106](https://github.com/minseong0106)         |      Backend Developer      |
+|신새별 (Saebyeol Shin)|        [SaebyeolShin](https://github.com/SaebyeolShin)        |  Frontend Developer   |
+|이하은 (Haeun Lee)|     [fun-soul](https://github.com/fun-soul)     | Frontend Developer  |
+|최현진 (Hyeonjin Choi)| [HyeonjinChoi](https://github.com/HyeonjinChoi) |   Backend Developer   |
