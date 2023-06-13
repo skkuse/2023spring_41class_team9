@@ -7,7 +7,13 @@ We provide a web service to users who want to develop their problem-solving skil
 - Hints provided using GPT-3 to help users overcome obstacles and solve problems until the end
 - Incorrect answer notes that allow users to review their own solutions as well as the solutions provided by GPT-3
 
-## Contents List
+### Usage
+```
+cd backend
+python manage.py runserver
+```
+
+### Contents List
 - [Login](#login)
   * [Login page](#login-page)
   * [Register Page](#register-page)
