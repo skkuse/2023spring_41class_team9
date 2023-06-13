@@ -1,5 +1,5 @@
 # 2023spring_41class_team9
-We provide a web service to users who want to develop their problem-solving skills using Python, helping them to learn and solve problems until the end by providing hints and opportunities to practice.
+We provide a web service to users who want to develop their problem-solving skills using Python, helping them to learn and solve problems by providing GPT generated hints.
 
 ### Key Features
 - Practice mode that allows users to solve problems step by step
