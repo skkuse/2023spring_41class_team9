@@ -18,4 +18,25 @@ We provide a web service to users who want to develop their problem-solving skil
 - User ranking: Users can check the ranking based on the scores obtained through the real mode.
 - User name and User score are displayed.
 - Provides two modes: practice mode and real mode.
-<p align="center"><img src="./examples/main.png"></p>
+<p align="center"><img src="./examples/main_page.png"></p>
+
+## Practice Mode
+### Practice Map
+- Explanation of the practice mode is provided.
+- The number of crowns varies depending on the number of hints used during problem-solving.
+- In the practice mode, problem-solving is possible in the order of the map, and the next problem can only be solved after solving the problem in the corresponding stage.
+<p align="center"><img src="./examples/practice.png"></p>
+
+### Practice Page
+- Problem
+  - problem content
+  - description of inputs
+  - description of outputs
+  - sample input/output examples
+- 3 types of hints
+  - a brief hint about the problem
+  - a hint about the next step based on the user's code
+  - a hint about the incorrect parts based on the user's code
+- The timer is displayed during problem-solving
+- There is a code input box
+<p align="center"><img src="./examples/practice_mode.png"></p>
