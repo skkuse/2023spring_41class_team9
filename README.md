@@ -9,8 +9,7 @@ We provide a web service to users who want to develop their problem-solving skil
 
 ### Usage
 ```
-cd backend
-python manage.py runserver
+python ./backend/manage.py runserver
 ```
 
 ### Contents List
